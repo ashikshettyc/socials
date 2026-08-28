@@ -65,6 +65,8 @@ async function saveSentLog(log) {
 async function readPosts() {
   const posts = JSON.parse(await readFile(dataFile, 'utf8'))
   const resources = JSON.parse(await readFile(resourcesFile, 'utf8'))
+  const sentLog = await readSentLog()
+  const sentIds = new Set(sentLog.map((entry) => entry.localPostId))
   const metadataFallbacks = {
     'linkedin-w09-b': { title: 'OAuth tokens have lifecycle rules', source: 'backend/src/integrations/integrations.service.ts' },
     'linkedin-w10-a': { title: 'Typed API envelopes reduce frontend guesswork', source: 'NAVISHR-Dashboard/src/modules/performance/api/dashboard.api.ts' },
@@ -73,6 +75,9 @@ async function readPosts() {
   }
   return posts.map((post) => {
     let next = { ...metadataFallbacks[post.id], ...post }
+    if (sentIds.has(post.id)) {
+      next.status = 'Sent'
+    }
     if (post.platform === 'X' && post.format === 'thread' && post.items.length === 4) {
       next = { ...next, items: [post.items[0], post.items[1], `${post.items[2]} ${post.items[3]}`] }
     }
@@ -145,6 +150,11 @@ async function parseBody(request) {
 }
 
 async function handleApi(request, response, pathname) {
+  if (pathname === '/api/resources' && request.method === 'GET') {
+    const resources = JSON.parse(await readFile(resourcesFile, 'utf8'))
+    return sendJson(response, 200, resources)
+  }
+
   if (pathname === '/api/posts' && request.method === 'GET') {
     const posts = await readPosts()
     return sendJson(response, 200, {
@@ -231,6 +241,10 @@ async function handleApi(request, response, pathname) {
       if (!Array.isArray(next.items)) return sendJson(response, 400, { error: 'items must be an array' })
       posts[index] = next
       await savePosts(posts)
+      if (patch.status === 'Draft') {
+        const sentLog = await readSentLog()
+        await saveSentLog(sentLog.filter((entry) => entry.localPostId !== id))
+      }
       return sendJson(response, 200, { ...next, validation: validatePost(next) })
     }
   }

@@ -8,6 +8,10 @@ body { margin: 0; background: radial-gradient(circle at top right, #e9f4e9, tran
 .eyebrow { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .16em; margin: 0 0 12px; }
 h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 5vw, 64px); line-height: .98; margin: 0; letter-spacing: -.04em; }
 .subtitle { color: var(--muted); font-size: 17px; max-width: 590px; margin: 16px 0 0; }
+.nav-tabs { display: flex; gap: 12px; margin-top: 24px; }
+.nav-link { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; text-decoration: none; color: var(--muted); padding: 8px 14px; border-radius: 8px; border: 1px solid var(--line); background: white; transition: all 0.2s; }
+.nav-link:hover { color: var(--ink); border-color: var(--muted); }
+.nav-link.active { color: var(--green); background: var(--green-soft); border-color: #cdebd9; }
 .privacy { color: var(--green); background: var(--green-soft); border: 1px solid #cdebd9; padding: 12px 16px; border-radius: 10px; font-weight: 700; font-size: 12px; text-align: right; line-height: 1.5; }
 .privacy span { color: var(--muted); font-weight: 500; }
 .buffer-connect { display: grid; gap: 7px; min-width: 190px; }
@@ -31,6 +35,7 @@ select, input, textarea { border: 1px solid var(--line); border-radius: 8px; bac
 .status { font-size: 11px; border-radius: 999px; padding: 4px 8px; background: #eef1ee; color: var(--muted); white-space: nowrap; }
 .status.Approved { color: var(--green); background: var(--green-soft); }
 .status.Rejected { color: #a13a32; background: var(--accent-soft); }
+.status.Sent { color: #0a66c2; background: #eef5fc; }
 .post-card h2 { font-family: 'Space Grotesk'; font-size: 17px; margin: 12px 0 8px; }
 .meta { color: var(--muted); font-size: 12px; }
 .card-preview { display: grid; gap: 7px; padding: 10px; border-radius: 8px; background: #f7faf7; color: #34433a; font-size: 12px; line-height: 1.45; }
@@ -53,7 +58,11 @@ select, input, textarea { border: 1px solid var(--line); border-radius: 8px; bac
 .learning-links a:hover { text-decoration: underline; }
 .select-label { display: flex; align-items: center; gap: 5px; color: var(--muted); font-size: 10px; font-weight: 700; }
 .select-label input { accent-color: var(--accent); padding: 0; }
-.editor { min-height: 520px; padding: 24px; position: sticky; top: 18px; }
+.editor { min-height: 520px; padding: 24px; position: sticky; top: 18px; max-height: calc(100vh - 36px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(23, 35, 29, 0.15) transparent; }
+.editor::-webkit-scrollbar { width: 4px; }
+.editor::-webkit-scrollbar-track { background: transparent; }
+.editor::-webkit-scrollbar-thumb { background: rgba(23, 35, 29, 0.15); border-radius: 10px; }
+.editor::-webkit-scrollbar-thumb:hover { background: rgba(23, 35, 29, 0.3); }
 .editor.empty { color: var(--muted); display: grid; place-items: center; }
 .editor h2 { font-family: 'Space Grotesk'; font-size: 25px; margin: 12px 0 8px; }
 .editor label { margin-top: 18px; }

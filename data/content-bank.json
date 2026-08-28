@@ -1,11 +1,11 @@
 [
   {
-    "id": "x-w01-a",
+    "id": "x-w1-d1",
     "platform": "X",
     "week": 1,
     "day": 1,
     "format": "thread",
-    "status": "Draft",
+    "status": "Approved",
     "title": "A tenant boundary is an invariant",
     "source": "backend/src/common/guards/permissions.guard.ts",
     "mediaHint": "Simple architecture diagram showing request -> tenant context -> permission guard -> service",
@@ -26,17 +26,17 @@
     }
   },
   {
-    "id": "linkedin-w01-a",
+    "id": "linkedin-w1-d1",
     "platform": "LinkedIn",
     "week": 1,
-    "day": 2,
+    "day": 1,
     "format": "post",
-    "status": "Draft",
+    "status": "Approved",
     "title": "Navigation is part of authorization",
     "source": "NAVISHR-Dashboard/src/shared/layout/Sidebar.tsx",
     "mediaHint": "Screenshot or clean mockup of a permission-aware sidebar with modules hidden by access",
     "items": [
-      "One of my first lessons from building a modular operations platform was that navigation is part of authorization.\n\nA sidebar should not list every feature in the product. It should reflect the modules enabled for the organization and the permissions available to the current user.\n\nThat improves the user experience, but the UI is only the visible layer. The backend still has to enforce the same rules. Hiding a menu item is not security.\n\nThe practical pattern is to define permissions centrally, derive visibility from them, and enforce access again at the API boundary. Good architecture makes the allowed path obvious while making the forbidden path impossible.\n\n#FrontendDevelopment #TypeScript #ProductEngineering"
+      "One of my first lessons from building a modular operations platform was that navigation is part of authorization.\n\nA sidebar should not list every feature in the product. It should reflect the modules enabled for the organization and the permissions available to the current user.\n\nThat improves the user experience, but the UI is only the visible layer. The backend still has to enforce the same rules. Hiding a menu item is not security.\n\nThe practical pattern is to define permissions centrally, derive visibility from them, and enforce access again at the API boundary. Good architecture makes the allowed path obvious while making the forbidden path impossible."
     ],
     "hashtags": [
       "#FrontendDevelopment",
@@ -55,10 +55,10 @@
     }
   },
   {
-    "id": "x-w01-b",
+    "id": "x-w1-d2",
     "platform": "X",
     "week": 1,
-    "day": 3,
+    "day": 2,
     "format": "thread",
     "status": "Draft",
     "title": "An online exam is a state machine",
@@ -81,17 +81,17 @@
     }
   },
   {
-    "id": "linkedin-w01-b",
+    "id": "linkedin-w1-d2",
     "platform": "LinkedIn",
     "week": 1,
-    "day": 4,
+    "day": 2,
     "format": "post",
     "status": "Draft",
     "title": "Build the workflow before the screen",
     "source": "exam-player/src/features/student/exams/pages/StudentExamPlayerPage.tsx",
     "mediaHint": "Annotated wireframe of an exam flow with states and transition rules",
     "items": [
-      "A useful product habit: model the workflow before designing the screen.\n\nIn an online assessment system, the visible page is only one part of the problem. The candidate registers, grants device permissions, reads instructions, starts an attempt, answers questions, loses focus or fullscreen, and eventually submits.\n\nEach transition can fail. Treating the process as a state machine makes those failures visible early.\n\nThe result is not just cleaner code. It is a more predictable experience for the person taking the assessment.\n\n#EdTech #Assessment #ProductEngineering"
+      "A useful product habit: model the workflow before designing the screen.\n\nIn an online assessment system, the visible page is only one part of the problem. The candidate registers, grants device permissions, reads instructions, starts an attempt, answers questions, loses focus or fullscreen, and eventually submits.\n\nEach transition can fail. Treating the process as a state machine makes those failures visible early.\n\nThe result is not just cleaner code. It is a more predictable experience for the person taking the assessment."
     ],
     "hashtags": [
       "#EdTech",
@@ -110,10 +110,10 @@
     }
   },
   {
-    "id": "x-w02-a",
+    "id": "x-w1-d3",
     "platform": "X",
-    "week": 2,
-    "day": 1,
+    "week": 1,
+    "day": 3,
     "format": "thread",
     "status": "Draft",
     "title": "Permission names are an API",
@@ -136,16 +136,16 @@
     }
   },
   {
-    "id": "linkedin-w02-a",
+    "id": "linkedin-w1-d3",
     "platform": "LinkedIn",
-    "week": 2,
-    "day": 2,
+    "week": 1,
+    "day": 3,
     "format": "post",
     "status": "Draft",
     "title": "Why role names should not drive authorization",
     "source": "backend/src/common/guards/permissions.guard.ts",
     "items": [
-      "A role called Manager in one organization may be called Team Lead in another. If authorization depends on the literal role name, the product is silently coupled to one customer's vocabulary.\n\nPermissions are a stronger abstraction. They describe what a user can do, while roles become configurable bundles of those capabilities.\n\nThis also makes testing clearer. Instead of asking whether a user is a manager, ask whether the user has the permission to approve, assign, or view a scoped resource.\n\nRole labels are for people. Permissions are for the system.\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+      "A role called Manager in one organization may be called Team Lead in another. If authorization depends on the literal role name, the product is silently coupled to one customer's vocabulary.\n\nPermissions are a stronger abstraction. They describe what a user can do, while roles become configurable bundles of those capabilities.\n\nThis also makes testing clearer. Instead of asking whether a user is a manager, ask whether the user has the permission to approve, assign, or view a scoped resource.\n\nRole labels are for people. Permissions are for the system."
     ],
     "hashtags": [
       "#SoftwareEngineering",
@@ -164,10 +164,10 @@
     }
   },
   {
-    "id": "x-w02-b",
+    "id": "x-w1-d4",
     "platform": "X",
-    "week": 2,
-    "day": 3,
+    "week": 1,
+    "day": 4,
     "format": "thread",
     "status": "Draft",
     "title": "Transactions protect workflows, not just rows",
@@ -190,16 +190,16 @@
     }
   },
   {
-    "id": "linkedin-w02-b",
+    "id": "linkedin-w1-d4",
     "platform": "LinkedIn",
-    "week": 2,
+    "week": 1,
     "day": 4,
     "format": "post",
     "status": "Draft",
     "title": "A transaction is a product decision",
     "source": "backend/src/auth/auth.service.ts",
     "items": [
-      "When a user registers, the system may create credentials and a profile together. Users experience that as one action, so the database should usually treat it as one unit too.\n\nA transaction is not just a database optimization. It protects the meaning of the workflow. Either the complete registration succeeds, or none of it becomes visible.\n\nThis way of thinking helps identify transaction boundaries: match them to business actions, not to whichever repository call happens to be nearby.\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+      "When a user registers, the system may create credentials and a profile together. Users experience that as one action, so the database should usually treat it as one unit too.\n\nA transaction is not just a database optimization. It protects the meaning of the workflow. Either the complete registration succeeds, or none of it becomes visible.\n\nThis way of thinking helps identify transaction boundaries: match them to business actions, not to whichever repository call happens to be nearby."
     ],
     "hashtags": [
       "#SoftwareEngineering",
@@ -218,10 +218,10 @@
     }
   },
   {
-    "id": "x-w03-a",
+    "id": "x-w1-d5",
     "platform": "X",
-    "week": 3,
-    "day": 1,
+    "week": 1,
+    "day": 5,
     "format": "thread",
     "status": "Draft",
     "title": "A timer needs more than setInterval",
@@ -244,16 +244,16 @@
     }
   },
   {
-    "id": "linkedin-w03-a",
+    "id": "linkedin-w1-d5",
     "platform": "LinkedIn",
-    "week": 3,
-    "day": 2,
+    "week": 1,
+    "day": 5,
     "format": "post",
     "status": "Draft",
     "title": "The difficult part of timed interfaces is recovery",
     "source": "exam-player/src/features/teacher/exams/stores/useExamSessionStore.ts",
     "items": [
-      "Countdowns are easy to demo and hard to make trustworthy.\n\nA real timed interface needs answers for questions such as: What happens when the page loses focus? What happens when a question expires? What happens when the network is slow? What happens when submission is triggered twice?\n\nThe visual timer is only the surface. The important work is defining state transitions and recovery behavior before users encounter them.\n\n#EdTech #Assessment #ProductEngineering"
+      "Countdowns are easy to demo and hard to make trustworthy.\n\nA real timed interface needs answers for questions such as: What happens when the page loses focus? What happens when a question expires? What happens when the network is slow? What happens when submission is triggered twice?\n\nThe visual timer is only the surface. The important work is defining state transitions and recovery behavior before users encounter them."
     ],
     "hashtags": [
       "#EdTech",
@@ -272,10 +272,10 @@
     }
   },
   {
-    "id": "x-w03-b",
+    "id": "x-w1-d6",
     "platform": "X",
-    "week": 3,
-    "day": 3,
+    "week": 1,
+    "day": 6,
     "format": "thread",
     "status": "Draft",
     "title": "Never confuse UI feedback with server truth",
@@ -298,16 +298,16 @@
     }
   },
   {
-    "id": "linkedin-w03-b",
+    "id": "linkedin-w1-d6",
     "platform": "LinkedIn",
-    "week": 3,
-    "day": 4,
+    "week": 1,
+    "day": 6,
     "format": "post",
     "status": "Draft",
     "title": "Optimistic interfaces need honest failure states",
     "source": "exam-player/src/features/student/exams/pages/StudentExamPlayerPage.tsx",
     "items": [
-      "Users want immediate feedback, especially in a long form or exam. That makes optimistic UI attractive.\n\nBut optimistic UI creates a responsibility: the application must clearly distinguish local confidence from server confirmation.\n\nA good pattern is to update the interface immediately, synchronize in the background, and make a failed synchronization visible and recoverable. Speed is valuable. Pretending a failed write succeeded is not.\n\n#EdTech #Assessment #ProductEngineering"
+      "Users want immediate feedback, especially in a long form or exam. That makes optimistic UI attractive.\n\nBut optimistic UI creates a responsibility: the application must clearly distinguish local confidence from server confirmation.\n\nA good pattern is to update the interface immediately, synchronize in the background, and make a failed synchronization visible and recoverable. Speed is valuable. Pretending a failed write succeeded is not."
     ],
     "hashtags": [
       "#EdTech",
@@ -326,10 +326,10 @@
     }
   },
   {
-    "id": "x-w04-a",
+    "id": "x-w1-d7",
     "platform": "X",
-    "week": 4,
-    "day": 1,
+    "week": 1,
+    "day": 7,
     "format": "thread",
     "status": "Draft",
     "title": "Nested questions change progress math",
@@ -352,16 +352,16 @@
     }
   },
   {
-    "id": "linkedin-w04-a",
+    "id": "linkedin-w1-d7",
     "platform": "LinkedIn",
-    "week": 4,
-    "day": 2,
+    "week": 1,
+    "day": 7,
     "format": "post",
     "status": "Draft",
     "title": "Hierarchical data deserves hierarchical UI logic",
     "source": "exam-player/src/features/teacher/exams/components/ExamPlayer.tsx",
     "items": [
-      "A flat array is convenient until the domain becomes hierarchical. In an assessment player, a passage can contain several answerable child questions.\n\nProgress must count leaves. Marks may belong to children. Navigation may operate on groups while review operates on individual answers.\n\nThe lesson applies well beyond exams: when the data has a tree shape, centralize the recursive rules instead of letting every component flatten it differently.\n\n#EdTech #Assessment #ProductEngineering"
+      "A flat array is convenient until the domain becomes hierarchical. In an assessment player, a passage can contain several answerable child questions.\n\nProgress must count leaves. Marks may belong to children. Navigation may operate on groups while review operates on individual answers.\n\nThe lesson applies well beyond exams: when the data has a tree shape, centralize the recursive rules instead of letting every component flatten it differently."
     ],
     "hashtags": [
       "#EdTech",
@@ -380,10 +380,10 @@
     }
   },
   {
-    "id": "x-w04-b",
+    "id": "x-w2-d1",
     "platform": "X",
-    "week": 4,
-    "day": 3,
+    "week": 2,
+    "day": 1,
     "format": "thread",
     "status": "Draft",
     "title": "A review flag is small state with real value",
@@ -405,16 +405,16 @@
     }
   },
   {
-    "id": "linkedin-w04-b",
+    "id": "linkedin-w2-d1",
     "platform": "LinkedIn",
-    "week": 4,
-    "day": 4,
+    "week": 2,
+    "day": 1,
     "format": "post",
     "status": "Draft",
     "title": "Small UI states deserve architecture too",
     "source": "exam-player/src/features/teacher/exams/components/ExamPlayer.tsx",
     "items": [
-      "A mark-for-review button looks trivial. It becomes less trivial when the state must survive navigation, appear in a summary, and remain consistent with the current attempt.\n\nThe broader lesson is that state should be owned by the layer that gives it meaning. If a value matters to the session, do not hide it inside one button component.\n\n#EdTech #Assessment #ProductEngineering"
+      "A mark-for-review button looks trivial. It becomes less trivial when the state must survive navigation, appear in a summary, and remain consistent with the current attempt.\n\nThe broader lesson is that state should be owned by the layer that gives it meaning. If a value matters to the session, do not hide it inside one button component."
     ],
     "hashtags": [
       "#EdTech",
@@ -433,10 +433,10 @@
     }
   },
   {
-    "id": "x-w05-a",
+    "id": "x-w2-d2",
     "platform": "X",
-    "week": 5,
-    "day": 1,
+    "week": 2,
+    "day": 2,
     "format": "thread",
     "status": "Draft",
     "title": "Drag and drop needs a server contract",
@@ -459,9 +459,9 @@
     }
   },
   {
-    "id": "linkedin-w05-a",
+    "id": "linkedin-w2-d2",
     "platform": "LinkedIn",
-    "week": 5,
+    "week": 2,
     "day": 2,
     "format": "post",
     "status": "Draft",
@@ -469,7 +469,7 @@
     "source": "NAVISHR-Dashboard/src/modules/tasks/board/components/TaskBoardView.tsx",
     "mediaHint": "Before-and-after task board showing a status transition",
     "items": [
-      "A drag-and-drop task board feels immediate, but the actual operation is a status transition with permissions, valid targets, and server persistence.\n\nThe client can use a local override for responsiveness. It should then resolve the target status and send the real update through the API.\n\nThe best interactions are not isolated frontend tricks. They are visual expressions of a sound domain contract.\n\n#FrontendDevelopment #TypeScript #ProductEngineering"
+      "A drag-and-drop task board feels immediate, but the actual operation is a status transition with permissions, valid targets, and server persistence.\n\nThe client can use a local override for responsiveness. It should then resolve the target status and send the real update through the API.\n\nThe best interactions are not isolated frontend tricks. They are visual expressions of a sound domain contract."
     ],
     "hashtags": [
       "#FrontendDevelopment",
@@ -488,9 +488,9 @@
     }
   },
   {
-    "id": "x-w05-b",
+    "id": "x-w2-d3",
     "platform": "X",
-    "week": 5,
+    "week": 2,
     "day": 3,
     "format": "thread",
     "status": "Draft",
@@ -514,16 +514,16 @@
     }
   },
   {
-    "id": "linkedin-w05-b",
+    "id": "linkedin-w2-d3",
     "platform": "LinkedIn",
-    "week": 5,
-    "day": 4,
+    "week": 2,
+    "day": 3,
     "format": "post",
     "status": "Draft",
     "title": "Decide where state should live",
     "source": "NAVISHR-Dashboard/src/modules/tasks/board/pages/TasksListPage.tsx",
     "items": [
-      "One frontend question I ask often is: how long should this decision survive?\n\nA drawer toggle can stay local. A search term or due-date filter may belong in the URL because users expect refreshes, links, and back-button navigation to preserve it.\n\nState placement is product design. The answer is not always React state, a global store, or the server. It depends on the user's mental model.\n\n#FrontendDevelopment #TypeScript #ProductEngineering"
+      "One frontend question I ask often is: how long should this decision survive?\n\nA drawer toggle can stay local. A search term or due-date filter may belong in the URL because users expect refreshes, links, and back-button navigation to preserve it.\n\nState placement is product design. The answer is not always React state, a global store, or the server. It depends on the user's mental model."
     ],
     "hashtags": [
       "#FrontendDevelopment",
@@ -542,10 +542,10 @@
     }
   },
   {
-    "id": "x-w06-a",
+    "id": "x-w2-d4",
     "platform": "X",
-    "week": 6,
-    "day": 1,
+    "week": 2,
+    "day": 4,
     "format": "thread",
     "status": "Draft",
     "title": "Pagination is a product feature",
@@ -568,16 +568,16 @@
     }
   },
   {
-    "id": "linkedin-w06-a",
+    "id": "linkedin-w2-d4",
     "platform": "LinkedIn",
-    "week": 6,
-    "day": 2,
+    "week": 2,
+    "day": 4,
     "format": "post",
     "status": "Draft",
     "title": "Design list endpoints for the day when data grows",
     "source": "backend/src/assessment/evaluations/evaluations.service.ts",
     "items": [
-      "A list endpoint that works with a few records can become a product problem when the dataset grows.\n\nPage and limit constraints protect the database. Selecting only list fields reduces payload size. Detail views can request the expensive shape when needed.\n\nThe most useful performance work often looks boring: bounded inputs, deliberate projections, indexes, and no accidental fetch-everything behavior.\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+      "A list endpoint that works with a few records can become a product problem when the dataset grows.\n\nPage and limit constraints protect the database. Selecting only list fields reduces payload size. Detail views can request the expensive shape when needed.\n\nThe most useful performance work often looks boring: bounded inputs, deliberate projections, indexes, and no accidental fetch-everything behavior."
     ],
     "hashtags": [
       "#SoftwareEngineering",
@@ -596,10 +596,10 @@
     }
   },
   {
-    "id": "x-w06-b",
+    "id": "x-w2-d5",
     "platform": "X",
-    "week": 6,
-    "day": 3,
+    "week": 2,
+    "day": 5,
     "format": "thread",
     "status": "Draft",
     "title": "Avoid N+1 by changing the shape of the question",
@@ -622,16 +622,16 @@
     }
   },
   {
-    "id": "linkedin-w06-b",
+    "id": "linkedin-w2-d5",
     "platform": "LinkedIn",
-    "week": 6,
-    "day": 4,
+    "week": 2,
+    "day": 5,
     "format": "post",
     "status": "Draft",
     "title": "The simplest N+1 fix is often a better question",
     "source": "backend/src/news_post/news_post.service.ts",
     "items": [
-      "When a list needs related names, it is tempting to fetch each name inside a loop. That works in a test dataset and quietly becomes expensive later.\n\nCollect the IDs first, fetch related records in one query, then map them in memory. The code remains understandable and the database does far less work.\n\nBefore optimizing syntax, examine the shape of the data being requested.\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+      "When a list needs related names, it is tempting to fetch each name inside a loop. That works in a test dataset and quietly becomes expensive later.\n\nCollect the IDs first, fetch related records in one query, then map them in memory. The code remains understandable and the database does far less work.\n\nBefore optimizing syntax, examine the shape of the data being requested."
     ],
     "hashtags": [
       "#SoftwareEngineering",
@@ -650,10 +650,10 @@
     }
   },
   {
-    "id": "x-w07-a",
+    "id": "x-w2-d6",
     "platform": "X",
-    "week": 7,
-    "day": 1,
+    "week": 2,
+    "day": 6,
     "format": "thread",
     "status": "Draft",
     "title": "Approvals are state machines",
@@ -676,17 +676,17 @@
     }
   },
   {
-    "id": "linkedin-w07-a",
+    "id": "linkedin-w2-d6",
     "platform": "LinkedIn",
-    "week": 7,
-    "day": 2,
+    "week": 2,
+    "day": 6,
     "format": "post",
     "status": "Draft",
     "title": "Approval workflows need history, not just status",
     "source": "backend/docs/concierge_finance_workflow.md",
     "mediaHint": "Neutral workflow diagram with approval roles and audit checkpoints",
     "items": [
-      "A status such as Approved or Rejected tells you where a workflow is now. It does not tell you how it got there.\n\nFor important workflows, every transition should retain the actor, timestamp, and reason. That makes the process reviewable and makes support conversations much less mysterious.\n\nA state machine defines what is allowed. An audit trail explains what happened. You need both.\n\n#WorkflowAutomation #SoftwareEngineering #ProductDesign"
+      "A status such as Approved or Rejected tells you where a workflow is now. It does not tell you how it got there.\n\nFor important workflows, every transition should retain the actor, timestamp, and reason. That makes the process reviewable and makes support conversations much less mysterious.\n\nA state machine defines what is allowed. An audit trail explains what happened. You need both."
     ],
     "hashtags": [
       "#WorkflowAutomation",
@@ -705,10 +705,10 @@
     }
   },
   {
-    "id": "x-w07-b",
+    "id": "x-w2-d7",
     "platform": "X",
-    "week": 7,
-    "day": 3,
+    "week": 2,
+    "day": 7,
     "format": "thread",
     "status": "Draft",
     "title": "Separation of duties is a product feature",
@@ -731,16 +731,16 @@
     }
   },
   {
-    "id": "linkedin-w07-b",
+    "id": "linkedin-w2-d7",
     "platform": "LinkedIn",
-    "week": 7,
-    "day": 4,
+    "week": 2,
+    "day": 7,
     "format": "post",
     "status": "Draft",
     "title": "Controls can improve the user experience",
     "source": "backend/docs/candidate_lifecycle_and_finance_architecture.md",
     "items": [
-      "It is easy to think of approval controls as friction. In a workflow involving documents, payments, or eligibility, the opposite can be true.\n\nA clear handoff tells each team what it owns and what happens next. A visible reason for rejection prevents guesswork. A recorded confirmation builds trust.\n\nThe best controls do not merely block mistakes. They explain the process.\n\n#WorkflowAutomation #SoftwareEngineering #ProductDesign"
+      "It is easy to think of approval controls as friction. In a workflow involving documents, payments, or eligibility, the opposite can be true.\n\nA clear handoff tells each team what it owns and what happens next. A visible reason for rejection prevents guesswork. A recorded confirmation builds trust.\n\nThe best controls do not merely block mistakes. They explain the process."
     ],
     "hashtags": [
       "#WorkflowAutomation",
@@ -759,9 +759,9 @@
     }
   },
   {
-    "id": "x-w08-a",
+    "id": "x-w3-d1",
     "platform": "X",
-    "week": 8,
+    "week": 3,
     "day": 1,
     "format": "thread",
     "status": "Draft",
@@ -785,16 +785,16 @@
     }
   },
   {
-    "id": "linkedin-w08-a",
+    "id": "linkedin-w3-d1",
     "platform": "LinkedIn",
-    "week": 8,
-    "day": 2,
+    "week": 3,
+    "day": 1,
     "format": "post",
     "status": "Draft",
     "title": "Feature visibility is not feature security",
     "source": "backend/src/common/guards/permissions.guard.ts",
     "items": [
-      "A hidden navigation item is useful product behavior. It is not a security boundary.\n\nWhen an organization can disable a module, the API must enforce that decision even if a user's old role still contains a matching permission.\n\nThis is a recurring architecture pattern: the frontend communicates availability, while the backend enforces authority. Both matter, but they solve different problems.\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+      "A hidden navigation item is useful product behavior. It is not a security boundary.\n\nWhen an organization can disable a module, the API must enforce that decision even if a user's old role still contains a matching permission.\n\nThis is a recurring architecture pattern: the frontend communicates availability, while the backend enforces authority. Both matter, but they solve different problems."
     ],
     "hashtags": [
       "#SoftwareEngineering",
@@ -813,10 +813,10 @@
     }
   },
   {
-    "id": "x-w08-b",
+    "id": "x-w3-d2",
     "platform": "X",
-    "week": 8,
-    "day": 3,
+    "week": 3,
+    "day": 2,
     "format": "thread",
     "status": "Draft",
     "title": "Backward compatibility can be intentional",
@@ -839,16 +839,16 @@
     }
   },
   {
-    "id": "linkedin-w08-b",
+    "id": "linkedin-w3-d2",
     "platform": "LinkedIn",
-    "week": 8,
-    "day": 4,
+    "week": 3,
+    "day": 2,
     "format": "post",
     "status": "Draft",
     "title": "Legacy data needs a deliberate interpretation",
     "source": "backend/src/common/guards/permissions.guard.ts",
     "items": [
-      "When a new boolean setting is added to an existing product, null and false may not mean the same thing.\n\nAn explicit false can represent a decision. A missing value may simply represent an older record created before the feature existed.\n\nBackward compatibility is not ignoring the past. It is choosing an interpretation that protects existing users while the data catches up.\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+      "When a new boolean setting is added to an existing product, null and false may not mean the same thing.\n\nAn explicit false can represent a decision. A missing value may simply represent an older record created before the feature existed.\n\nBackward compatibility is not ignoring the past. It is choosing an interpretation that protects existing users while the data catches up."
     ],
     "hashtags": [
       "#SoftwareEngineering",
@@ -867,10 +867,10 @@
     }
   },
   {
-    "id": "x-w09-a",
+    "id": "x-w3-d3",
     "platform": "X",
-    "week": 9,
-    "day": 1,
+    "week": 3,
+    "day": 3,
     "format": "thread",
     "status": "Draft",
     "title": "Client code should not hold secrets",
@@ -893,16 +893,16 @@
     }
   },
   {
-    "id": "linkedin-w09-a",
+    "id": "linkedin-w3-d3",
     "platform": "LinkedIn",
-    "week": 9,
-    "day": 2,
+    "week": 3,
+    "day": 3,
     "format": "post",
     "status": "Draft",
     "mediaHint": "Simple browser -> local server -> provider diagram with token only on the server side",
     "source": "backend/src/integrations/integrations.service.ts",
     "items": [
-      "A provider token belongs on the server, even when the product is a local personal dashboard.\n\nThe browser should send an approved action to the local backend. The backend should add the credential, call the provider, and return only the result needed by the interface.\n\nThis boundary reduces accidental exposure and gives the application one place to handle retries, errors, and audit logging.\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+      "A provider token belongs on the server, even when the product is a local personal dashboard.\n\nThe browser should send an approved action to the local backend. The backend should add the credential, call the provider, and return only the result needed by the interface.\n\nThis boundary reduces accidental exposure and gives the application one place to handle retries, errors, and audit logging."
     ],
     "hashtags": [
       "#SoftwareEngineering",
@@ -921,10 +921,10 @@
     }
   },
   {
-    "id": "x-w09-b",
+    "id": "x-w3-d4",
     "platform": "X",
-    "week": 9,
-    "day": 3,
+    "week": 3,
+    "day": 4,
     "format": "thread",
     "status": "Draft",
     "title": "OAuth tokens have lifecycle rules",
@@ -949,14 +949,14 @@
   {
     "title": "OAuth tokens have lifecycle rules",
     "source": "backend/src/integrations/integrations.service.ts",
-    "id": "linkedin-w09-b",
+    "id": "linkedin-w3-d4",
     "platform": "LinkedIn",
-    "week": 9,
+    "week": 3,
     "day": 4,
     "format": "post",
     "status": "Draft",
     "items": [
-      "The first successful OAuth request is the beginning of the integration, not the end.\n\nProduction integrations need state validation, refresh-token rotation, revocation handling, and a user-friendly disconnected state.\n\nThe provider call is often the easiest part. The lifecycle around the provider call is where reliability is built.\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+      "The first successful OAuth request is the beginning of the integration, not the end.\n\nProduction integrations need state validation, refresh-token rotation, revocation handling, and a user-friendly disconnected state.\n\nThe provider call is often the easiest part. The lifecycle around the provider call is where reliability is built."
     ],
     "hashtags": [
       "#SoftwareEngineering",
@@ -975,10 +975,10 @@
     }
   },
   {
-    "id": "x-w10-a",
+    "id": "x-w3-d5",
     "platform": "X",
-    "week": 10,
-    "day": 1,
+    "week": 3,
+    "day": 5,
     "format": "thread",
     "status": "Draft",
     "title": "Typed API envelopes reduce frontend guesswork",
@@ -1003,14 +1003,14 @@
   {
     "title": "Typed API envelopes reduce frontend guesswork",
     "source": "NAVISHR-Dashboard/src/modules/performance/api/dashboard.api.ts",
-    "id": "linkedin-w10-a",
+    "id": "linkedin-w3-d5",
     "platform": "LinkedIn",
-    "week": 10,
-    "day": 2,
+    "week": 3,
+    "day": 5,
     "format": "post",
     "status": "Draft",
     "items": [
-      "One small frontend architecture choice pays off repeatedly: unwrap API envelopes in the API layer.\n\nFeature components should receive the data they need, not repeatedly know that the server wraps it inside success, message, and data.\n\nBoundaries are where types earn their keep. Normalize once, then keep the rest of the feature simple.\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+      "One small frontend architecture choice pays off repeatedly: unwrap API envelopes in the API layer.\n\nFeature components should receive the data they need, not repeatedly know that the server wraps it inside success, message, and data.\n\nBoundaries are where types earn their keep. Normalize once, then keep the rest of the feature simple."
     ],
     "hashtags": [
       "#SoftwareEngineering",
@@ -1029,10 +1029,10 @@
     }
   },
   {
-    "id": "x-w10-b",
+    "id": "x-w3-d6",
     "platform": "X",
-    "week": 10,
-    "day": 3,
+    "week": 3,
+    "day": 6,
     "format": "thread",
     "status": "Draft",
     "title": "Reusable UI rules beat local cleverness",
@@ -1055,16 +1055,16 @@
     }
   },
   {
-    "id": "linkedin-w10-b",
+    "id": "linkedin-w3-d6",
     "platform": "LinkedIn",
-    "week": 10,
-    "day": 4,
+    "week": 3,
+    "day": 6,
     "format": "post",
     "status": "Draft",
     "title": "The best abstractions protect decisions",
     "source": "NAVISHR-Dashboard/agent.md",
     "items": [
-      "I have become more cautious about abstractions. Moving code into a component is not automatically reuse.\n\nA useful shared component protects a decision: how filters collapse on mobile, how statuses are colored, how tables behave, or how permissions are checked.\n\nAbstract repeated meaning, not repeated markup.\n\n#FrontendDevelopment #TypeScript #ProductEngineering"
+      "I have become more cautious about abstractions. Moving code into a component is not automatically reuse.\n\nA useful shared component protects a decision: how filters collapse on mobile, how statuses are colored, how tables behave, or how permissions are checked.\n\nAbstract repeated meaning, not repeated markup."
     ],
     "hashtags": [
       "#FrontendDevelopment",
@@ -1083,10 +1083,10 @@
     }
   },
   {
-    "id": "x-w11-a",
+    "id": "x-w3-d7",
     "platform": "X",
-    "week": 11,
-    "day": 1,
+    "week": 3,
+    "day": 7,
     "format": "thread",
     "status": "Draft",
     "title": "Validation is part of the candidate experience",
@@ -1109,16 +1109,16 @@
     }
   },
   {
-    "id": "linkedin-w11-a",
+    "id": "linkedin-w3-d7",
     "platform": "LinkedIn",
-    "week": 11,
-    "day": 2,
+    "week": 3,
+    "day": 7,
     "format": "post",
     "status": "Draft",
     "mediaHint": "Form UX mockup showing an inline error next to the field that needs correction",
     "source": "exam-player/src/features/student/exams/pages/StudentExamPlayerPage.tsx",
     "items": [
-      "The best validation message arrives before the user submits a broken workflow.\n\nIn a registration flow, fields can depend on one another. A specialization can constrain a track. Employment can determine whether salary is meaningful. A selected relationship can require a name and contact.\n\nValidation is product guidance. It should explain the next correct action, not merely announce failure.\n\n#EdTech #Assessment #ProductEngineering"
+      "The best validation message arrives before the user submits a broken workflow.\n\nIn a registration flow, fields can depend on one another. A specialization can constrain a track. Employment can determine whether salary is meaningful. A selected relationship can require a name and contact.\n\nValidation is product guidance. It should explain the next correct action, not merely announce failure."
     ],
     "hashtags": [
       "#EdTech",
@@ -1137,10 +1137,10 @@
     }
   },
   {
-    "id": "x-w11-b",
+    "id": "x-w4-d1",
     "platform": "X",
-    "week": 11,
-    "day": 3,
+    "week": 4,
+    "day": 1,
     "format": "thread",
     "status": "Draft",
     "title": "Camera permissions need graceful failure",
@@ -1165,14 +1165,14 @@
   {
     "title": "Camera permissions need graceful failure",
     "source": "exam-player/src/features/student/exams/components/CameraModal.tsx",
-    "id": "linkedin-w11-b",
+    "id": "linkedin-w4-d1",
     "platform": "LinkedIn",
-    "week": 11,
-    "day": 4,
+    "week": 4,
+    "day": 1,
     "format": "post",
     "status": "Draft",
     "items": [
-      "Browser APIs deserve the same error thinking as external APIs.\n\nCamera access can be denied, unavailable, interrupted, or unsupported. The interface needs a clear explanation, a retry path, and cleanup when the flow ends.\n\nA permission prompt is not a complete feature. The surrounding failure states are part of the feature too.\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+      "Browser APIs deserve the same error thinking as external APIs.\n\nCamera access can be denied, unavailable, interrupted, or unsupported. The interface needs a clear explanation, a retry path, and cleanup when the flow ends.\n\nA permission prompt is not a complete feature. The surrounding failure states are part of the feature too."
     ],
     "hashtags": [
       "#SoftwareEngineering",
@@ -1191,10 +1191,10 @@
     }
   },
   {
-    "id": "x-w12-a",
+    "id": "x-w4-d2",
     "platform": "X",
-    "week": 12,
-    "day": 1,
+    "week": 4,
+    "day": 2,
     "format": "thread",
     "status": "Draft",
     "title": "Build for reviewability",
@@ -1217,16 +1217,16 @@
     }
   },
   {
-    "id": "linkedin-w12-a",
+    "id": "linkedin-w4-d2",
     "platform": "LinkedIn",
-    "week": 12,
+    "week": 4,
     "day": 2,
     "format": "post",
     "status": "Draft",
     "mediaHint": "Neutral audit timeline showing who, when, what, and why",
     "source": "backend/docs/candidate_lifecycle_and_finance_architecture.md",
     "items": [
-      "A system becomes easier to operate when a person who was not present can reconstruct an important decision.\n\nThat usually means recording four things: who acted, when they acted, what changed, and why.\n\nAuditability is useful for compliance, but it is also useful for ordinary debugging and handoffs. Reviewable software is kinder to the team operating it.\n\n#WorkflowAutomation #SoftwareEngineering #ProductDesign"
+      "A system becomes easier to operate when a person who was not present can reconstruct an important decision.\n\nThat usually means recording four things: who acted, when they acted, what changed, and why.\n\nAuditability is useful for compliance, but it is also useful for ordinary debugging and handoffs. Reviewable software is kinder to the team operating it."
     ],
     "hashtags": [
       "#WorkflowAutomation",
@@ -1245,9 +1245,9 @@
     }
   },
   {
-    "id": "x-w12-b",
+    "id": "x-w4-d3",
     "platform": "X",
-    "week": 12,
+    "week": 4,
     "day": 3,
     "format": "thread",
     "status": "Draft",
@@ -1273,14 +1273,14 @@
   {
     "title": "The boring quality loop works",
     "source": "backend/agent.md",
-    "id": "linkedin-w12-b",
+    "id": "linkedin-w4-d3",
     "platform": "LinkedIn",
-    "week": 12,
-    "day": 4,
+    "week": 4,
+    "day": 3,
     "format": "post",
     "status": "Draft",
     "items": [
-      "The most reliable engineering habit I am building is a short feedback loop.\n\nMake a focused change. Run the cheapest test that could disprove the idea. Fix the local defect. Then continue.\n\nThis is less dramatic than a large rewrite, but it keeps failures understandable and makes progress easier to trust.\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+      "The most reliable engineering habit I am building is a short feedback loop.\n\nMake a focused change. Run the cheapest test that could disprove the idea. Fix the local defect. Then continue.\n\nThis is less dramatic than a large rewrite, but it keeps failures understandable and makes progress easier to trust."
     ],
     "hashtags": [
       "#SoftwareEngineering",
@@ -1297,5 +1297,335 @@
       "codeReference": "backend/agent.md",
       "suggestedQuestion": "What is the main tradeoff in testing, linting, build checks, and feedback loops?"
     }
+  },
+  {
+    "id": "x-w4-d4",
+    "platform": "X",
+    "week": 4,
+    "day": 4,
+    "format": "thread",
+    "status": "Draft",
+    "title": "Resizing images in the browser before upload",
+    "source": "NAVISHR-Dashboard/src/shared/hooks/useS3Upload.ts",
+    "mediaHint": "Diagram showing File Input -> Canvas resize (5MB -> 80KB) -> S3 Presigned URL Upload",
+    "items": [
+      "The hidden bottleneck in B2B file uploads isn't network speed. It's file size. Users uploading raw 10MB phone camera photos will stall your app and balloon your S3 storage bill.",
+      "Instead of processing files on the server or using expensive Lambda image resizers, compress images directly in the browser. Before launching the upload request, draw the file onto an HTML5 Canvas.",
+      "By resizing the image to bounded dimensions (e.g. max 256x256) and outputting a canvas blob at 0.8 quality, you compress a 5MB photo to under 100KB in milliseconds. Fast uploads, zero server cost."
+    ],
+    "learning": {
+      "concept": "API boundaries, typed responses, and service design",
+      "official": "https://docs.nestjs.com/controllers",
+      "officialLabel": "NestJS controllers guide",
+      "youtube": "https://www.youtube.com/results?search_query=API+design+boundaries+backend+engineering",
+      "youtubeLabel": "YouTube: API design",
+      "resourceKey": "api-design",
+      "codeReference": "NAVISHR-Dashboard/src/shared/hooks/useS3Upload.ts",
+      "suggestedQuestion": "What is the main tradeoff in api boundaries, typed responses, and service design?"
+    }
+  },
+  {
+    "id": "linkedin-w4-d4",
+    "platform": "LinkedIn",
+    "week": 4,
+    "day": 4,
+    "format": "post",
+    "status": "Draft",
+    "title": "Resizing images in the browser before upload",
+    "source": "NAVISHR-Dashboard/src/shared/hooks/useS3Upload.ts",
+    "mediaHint": "Diagram showing File Input -> Canvas resize (5MB -> 80KB) -> S3 Presigned URL Upload",
+    "items": [
+      "One of the quickest performance wins for a React application is moving image compression to the client.\n\nIn our task management system, users frequently attach images to issues. On modern mobile devices, a standard photo is easily 5MB to 12MB. If you upload that file raw:\n1. Your users suffer slow progress bars on mobile networks.\n2. Your S3 storage costs increase exponentially.\n3. Your server has to waste CPU cycles decoding and resizing them.\n\nWe solved this by performing compression in the browser using HTML5 Canvas before uploading. Our `useS3Upload` React hook intercepts the file, resizes it to bounded dimensions (max 256x256), and converts it to a compressed WebP/JPEG blob at 0.8 quality.\n\nThis single change decreased our upload payload sizes by 85% and made attachments feel instant.\n\nCode reference: `NAVISHR-Dashboard/src/shared/hooks/useS3Upload.ts`\n\n#FrontendDevelopment #TypeScript #ProductEngineering"
+    ],
+    "learning": {
+      "concept": "API boundaries, typed responses, and service design",
+      "official": "https://docs.nestjs.com/controllers",
+      "officialLabel": "NestJS controllers guide",
+      "youtube": "https://www.youtube.com/results?search_query=API+design+boundaries+backend+engineering",
+      "youtubeLabel": "YouTube: API design",
+      "resourceKey": "api-design",
+      "codeReference": "NAVISHR-Dashboard/src/shared/hooks/useS3Upload.ts",
+      "suggestedQuestion": "What is the main tradeoff in api boundaries, typed responses, and service design?"
+    },
+    "hashtags": [
+      "#FrontendDevelopment",
+      "#TypeScript",
+      "#ProductEngineering"
+    ]
+  },
+  {
+    "id": "x-w4-d5",
+    "platform": "X",
+    "week": 4,
+    "day": 5,
+    "format": "thread",
+    "status": "Draft",
+    "title": "Timing race conditions in PWA install prompts",
+    "source": "NAVISHR-Dashboard/src/shared/hooks/usePWAInstall.ts",
+    "mediaHint": "Graphic demonstrating Chrome trigger (before mount) vs Edge trigger (seconds after mount)",
+    "items": [
+      "Progressive Web Apps (PWAs) are great, but the standard `beforeinstallprompt` event has a massive gotcha: timing differences across browsers.",
+      "Chrome fires the event almost immediately, often before your React components mount and register event listeners. Edge can delay the event by several seconds, or only fire on your second visit.",
+      "To solve this, build a custom hook that checks for a pre-saved prompt reference on mount, listens to custom entry-point events, and triggers delayed checks (500ms, 1500ms, 3000ms). Bulletproof installation detection."
+    ],
+    "learning": {
+      "concept": "API boundaries, typed responses, and service design",
+      "official": "https://docs.nestjs.com/controllers",
+      "officialLabel": "NestJS controllers guide",
+      "youtube": "https://www.youtube.com/results?search_query=API+design+boundaries+backend+engineering",
+      "youtubeLabel": "YouTube: API design",
+      "resourceKey": "api-design",
+      "codeReference": "NAVISHR-Dashboard/src/shared/hooks/usePWAInstall.ts",
+      "suggestedQuestion": "What is the main tradeoff in api boundaries, typed responses, and service design?"
+    }
+  },
+  {
+    "id": "linkedin-w4-d5",
+    "platform": "LinkedIn",
+    "week": 4,
+    "day": 5,
+    "format": "post",
+    "status": "Draft",
+    "title": "Timing race conditions in PWA install prompts",
+    "source": "NAVISHR-Dashboard/src/shared/hooks/usePWAInstall.ts",
+    "mediaHint": "Graphic demonstrating Chrome trigger (before mount) vs Edge trigger (seconds after mount)",
+    "items": [
+      "If you're building a PWA, relying on a basic `beforeinstallprompt` event listener in React will lead to a flaky install button.\n\nThe event behaves differently across browsers:\n- **Chrome**: Fires the event extremely early. Often, the event triggers *before* your React root component mounts, meaning your listener is registered too late and you miss the prompt completely.\n- **Edge**: Delays the event, sometimes waiting for seconds after mount or requiring a second page visit before dispatching.\n\nTo build a bulletproof install button, our `usePWAInstall` hook uses a two-pronged strategy: it caches the prompt globally in the entry point (`main.tsx`) so React can read it immediately on mount, and it executes a series of retry checks (500ms, 1500ms, 3000ms, 6000ms) to catch delayed browser dispatches.\n\nCode reference: `NAVISHR-Dashboard/src/shared/hooks/usePWAInstall.ts`\n\n#FrontendDevelopment #TypeScript #ProductEngineering"
+    ],
+    "learning": {
+      "concept": "API boundaries, typed responses, and service design",
+      "official": "https://docs.nestjs.com/controllers",
+      "officialLabel": "NestJS controllers guide",
+      "youtube": "https://www.youtube.com/results?search_query=API+design+boundaries+backend+engineering",
+      "youtubeLabel": "YouTube: API design",
+      "resourceKey": "api-design",
+      "codeReference": "NAVISHR-Dashboard/src/shared/hooks/usePWAInstall.ts",
+      "suggestedQuestion": "What is the main tradeoff in api boundaries, typed responses, and service design?"
+    },
+    "hashtags": [
+      "#FrontendDevelopment",
+      "#TypeScript",
+      "#ProductEngineering"
+    ]
+  },
+  {
+    "id": "x-w4-d6",
+    "platform": "X",
+    "week": 4,
+    "day": 6,
+    "format": "thread",
+    "status": "Draft",
+    "title": "Visual and session guards for admin impersonation",
+    "source": "NAVISHR-Dashboard/src/shared/components/ImpersonationBanner.tsx",
+    "mediaHint": "Mockup of application with a bright orange header banner stating 'You are impersonating Acme Corp' and an 'Exit' button",
+    "items": [
+      "In B2B SaaS, customer support admins need user impersonation to troubleshoot client issues. But impersonating is highly risky: an admin might forget they are in a customer's live account and accidentally delete real data.",
+      "We handle this risk with clear boundaries. The backend enforces impersonation context through a separate header check, and the frontend displays a persistent, sticky bright-amber header (`ImpersonationBanner`).",
+      "The banner makes it impossible to forget you are impersonating, explicitly warns that changes are live, and provides an instant 'Exit Impersonation' escape button to return back to the admin portal."
+    ],
+    "learning": {
+      "concept": "API boundaries, typed responses, and service design",
+      "official": "https://docs.nestjs.com/controllers",
+      "officialLabel": "NestJS controllers guide",
+      "youtube": "https://www.youtube.com/results?search_query=API+design+boundaries+backend+engineering",
+      "youtubeLabel": "YouTube: API design",
+      "resourceKey": "api-design",
+      "codeReference": "NAVISHR-Dashboard/src/shared/components/ImpersonationBanner.tsx",
+      "suggestedQuestion": "What is the main tradeoff in api boundaries, typed responses, and service design?"
+    }
+  },
+  {
+    "id": "linkedin-w4-d6",
+    "platform": "LinkedIn",
+    "week": 4,
+    "day": 6,
+    "format": "post",
+    "status": "Draft",
+    "title": "Visual and session guards for admin impersonation",
+    "source": "NAVISHR-Dashboard/src/shared/components/ImpersonationBanner.tsx",
+    "mediaHint": "Mockup of application with a bright orange header banner stating 'You are impersonating Acme Corp' and an 'Exit' button",
+    "items": [
+      "User impersonation is a crucial feature for enterprise support, but it represents a significant operational risk. If an administrator forgets they are logged into a customer's account and starts performing write operations, they can corrupt live client data.\n\nWe design for human error by pairing strict backend session checks with strong visual boundaries:\n1. **High-Visibility Sticky Banner**: When an impersonation session is active, a bright amber `ImpersonationBanner` is pinned to the top of the viewport. It visually separates the impersonation session from normal operation.\n2. **Clear Context Warning**: The banner explicitly states the name of the tenant being impersonated and warns that actions affect live data.\n3. **Instant Escape Hatch**: A prominent 'Exit Impersonation' action is wired to stop the impersonation state and safely navigate the admin back to the super-admin console.\n\nCode reference: `NAVISHR-Dashboard/src/shared/components/ImpersonationBanner.tsx`\n\n#FrontendDevelopment #TypeScript #ProductEngineering"
+    ],
+    "learning": {
+      "concept": "API boundaries, typed responses, and service design",
+      "official": "https://docs.nestjs.com/controllers",
+      "officialLabel": "NestJS controllers guide",
+      "youtube": "https://www.youtube.com/results?search_query=API+design+boundaries+backend+engineering",
+      "youtubeLabel": "YouTube: API design",
+      "resourceKey": "api-design",
+      "codeReference": "NAVISHR-Dashboard/src/shared/components/ImpersonationBanner.tsx",
+      "suggestedQuestion": "What is the main tradeoff in api boundaries, typed responses, and service design?"
+    },
+    "hashtags": [
+      "#FrontendDevelopment",
+      "#TypeScript",
+      "#ProductEngineering"
+    ]
+  },
+  {
+    "id": "x-w4-d7",
+    "platform": "X",
+    "week": 4,
+    "day": 7,
+    "format": "thread",
+    "status": "Draft",
+    "title": "Enforcing data immutability with a NestJS FreezeService",
+    "source": "backend/src/common/freeze/freeze.service.ts",
+    "mediaHint": "Flowchart showing Update Request -> FreezeService.validateNotFrozen -> Allowed (Success) / Frozen (400 BadRequestException)",
+    "items": [
+      "In transactional systems (like billing or exams), letting historical data remain editable is an audit nightmare. Once a record is finalized or a period passes, it must be locked.",
+      "Instead of scattering `if (record.isLocked)` checks across every controller, centralize this in a NestJS `FreezeService`. It supports manual locking and automated freezing after a set period.",
+      "The service validates records on every update request and throws a `BadRequestException` if modified. This decoupled approach guarantees clean compliance and data integrity."
+    ],
+    "learning": {
+      "concept": "NestJS modules, guards, services, and validation",
+      "official": "https://docs.nestjs.com/",
+      "officialLabel": "NestJS documentation",
+      "youtube": "https://www.youtube.com/results?search_query=NestJS+official+tutorial",
+      "youtubeLabel": "YouTube: NestJS tutorials",
+      "resourceKey": "nestjs",
+      "codeReference": "backend/src/common/freeze/freeze.service.ts",
+      "suggestedQuestion": "What is the main tradeoff in nestjs modules, guards, services, and validation?"
+    }
+  },
+  {
+    "id": "linkedin-w4-d7",
+    "platform": "LinkedIn",
+    "week": 4,
+    "day": 7,
+    "format": "post",
+    "status": "Draft",
+    "title": "Enforcing data immutability with a NestJS FreezeService",
+    "source": "backend/src/common/freeze/freeze.service.ts",
+    "mediaHint": "Flowchart showing Update Request -> FreezeService.validateNotFrozen -> Allowed (Success) / Frozen (400 BadRequestException)",
+    "items": [
+      "In database design, data immutability is key for auditing and compliance. Once a business transaction is completed (like a timesheet approval or a test submission), that record should be frozen from future modifications.\n\nInstead of duplicate checks across our controllers, we centralized this logic in a reusable `FreezeService` in our NestJS backend:\n- **Manual Locking**: Allows admins to freeze a record with a reason.\n- **Automated Freezing**: Automatically calculates elapsed time since completion (e.g. 7 days) and locks the record.\n- **Central Guarding**: Before performing any database write, the update service passes the record through `validateNotFrozen(record)`. If `isFrozen` is true, it aborts and throws a `BadRequestException`.\n\nThis keeps our core services focused on business logic while guaranteeing that historical data remains untampered.\n\nCode reference: `backend/src/common/freeze/freeze.service.ts`\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+    ],
+    "learning": {
+      "concept": "NestJS modules, guards, services, and validation",
+      "official": "https://docs.nestjs.com/",
+      "officialLabel": "NestJS documentation",
+      "youtube": "https://www.youtube.com/results?search_query=NestJS+official+tutorial",
+      "youtubeLabel": "YouTube: NestJS tutorials",
+      "resourceKey": "nestjs",
+      "codeReference": "backend/src/common/freeze/freeze.service.ts",
+      "suggestedQuestion": "What is the main tradeoff in nestjs modules, guards, services, and validation?"
+    },
+    "hashtags": [
+      "#SoftwareEngineering",
+      "#BackendDevelopment",
+      "#SaaS"
+    ]
+  },
+  {
+    "id": "x-w5-d1",
+    "platform": "X",
+    "week": 5,
+    "day": 1,
+    "format": "thread",
+    "status": "Draft",
+    "title": "Decoupling subscription modules from user permissions",
+    "source": "backend/src/common/guards/permissions.guard.ts",
+    "mediaHint": "Diagram showing Request -> PermissionsGuard checks User Roles & checks Tenant Module Status -> Access Allowed/Denied",
+    "items": [
+      "In B2B SaaS, role permissions and billing plans are two different scopes. A user might have 'Admin' permissions to manage tasks, but if the customer downgrades and disables the task module, access must be blocked.",
+      "Don't mix subscription logic into user role tables. Instead, map permission prefixes (e.g. `tasks:`) to modules (e.g. `taskManager`) in your central guard.",
+      "Our NestJS `PermissionsGuard` checks both user roles and tenant module activations. If a module is turned off for the tenant, all matching routes return 403, keeping user roles clean and decoupled."
+    ],
+    "learning": {
+      "concept": "Permissions, roles, and access control",
+      "official": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "officialLabel": "OWASP authorization cheat sheet",
+      "youtube": "https://www.youtube.com/results?search_query=RBAC+ABAC+authorization+explained",
+      "youtubeLabel": "YouTube: RBAC and ABAC explained",
+      "resourceKey": "permissions",
+      "codeReference": "backend/src/common/guards/permissions.guard.ts",
+      "suggestedQuestion": "What is the main tradeoff in permissions, roles, and access control?"
+    }
+  },
+  {
+    "id": "linkedin-w5-d1",
+    "platform": "LinkedIn",
+    "week": 5,
+    "day": 1,
+    "format": "post",
+    "status": "Draft",
+    "title": "Decoupling subscription modules from user permissions",
+    "source": "backend/src/common/guards/permissions.guard.ts",
+    "mediaHint": "Diagram showing Request -> PermissionsGuard checks User Roles & checks Tenant Module Status -> Access Allowed/Denied",
+    "items": [
+      "A common mistake in SaaS architecture is mixing user roles with billing/subscription plans. If a client downgrades their plan and loses access to the 'Recruitment' module, how do you revoke access for their admin users?\n\nIf you modify individual user permissions or roles, you run into complex data synchronization issues. \n\nWe solve this by decoupling permission checks into a dual-layered `PermissionsGuard` in NestJS:\n1. **Permission Namespace Mapping**: We map permission prefixes (like `tasks:` or `performance:`) to tenant modules (`taskManager`, `performance`).\n2. **Feature Gate**: When a user makes a request, the guard checks if they possess the permission *and* if their organization's tenant subscription has the corresponding module enabled.\n3. **Instant Gating**: If a customer turns off a module, access is revoked globally for all their users, regardless of their individual roles.\n\nThis keeps subscription logic completely separated from user identity and roles.\n\nCode reference: `backend/src/common/guards/permissions.guard.ts`\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+    ],
+    "learning": {
+      "concept": "Permissions, roles, and access control",
+      "official": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "officialLabel": "OWASP authorization cheat sheet",
+      "youtube": "https://www.youtube.com/results?search_query=RBAC+ABAC+authorization+explained",
+      "youtubeLabel": "YouTube: RBAC and ABAC explained",
+      "resourceKey": "permissions",
+      "codeReference": "backend/src/common/guards/permissions.guard.ts",
+      "suggestedQuestion": "What is the main tradeoff in permissions, roles, and access control?"
+    },
+    "hashtags": [
+      "#SoftwareEngineering",
+      "#BackendDevelopment",
+      "#SaaS"
+    ]
+  },
+  {
+    "id": "x-w5-d2",
+    "platform": "X",
+    "week": 5,
+    "day": 2,
+    "format": "thread",
+    "status": "Draft",
+    "title": "Resolving tenant context in multi-tenant SaaS middleware",
+    "source": "backend/src/common/middleware/tenant.middleware.ts",
+    "mediaHint": "Illustration showing client request -> TenantMiddleware parses subdomain -> binds tenantId to Request -> db query scoped",
+    "items": [
+      "In a multi-tenant app, resolving which customer owns the request must happen at the entry boundary, not inside business services.",
+      "We use NestJS middleware to inspect the request hostname or custom headers (like `x-tenant-subdomain`), resolve the tenant ID, and bind it directly to the Express request object.",
+      "All database queries then read this scoped ID automatically, preventing developer error. It also allows super-admins to override the tenant ID with a secure header to impersonate client sessions."
+    ],
+    "learning": {
+      "concept": "Multi-tenant boundaries and authorization",
+      "official": "https://docs.nestjs.com/security/authorization",
+      "officialLabel": "NestJS authorization guide",
+      "youtube": "https://www.youtube.com/results?search_query=multi+tenant+authorization+architecture",
+      "youtubeLabel": "YouTube: multi-tenant authorization architecture",
+      "resourceKey": "multi-tenant",
+      "codeReference": "backend/src/common/middleware/tenant.middleware.ts",
+      "suggestedQuestion": "What is the main tradeoff in multi-tenant boundaries and authorization?"
+    }
+  },
+  {
+    "id": "linkedin-w5-d2",
+    "platform": "LinkedIn",
+    "week": 5,
+    "day": 2,
+    "format": "post",
+    "status": "Draft",
+    "title": "Resolving tenant context in multi-tenant SaaS middleware",
+    "source": "backend/src/common/middleware/tenant.middleware.ts",
+    "mediaHint": "Illustration showing client request -> TenantMiddleware parses subdomain -> binds tenantId to Request -> db query scoped",
+    "items": [
+      "In a multi-tenant SaaS, keeping data isolated between customers is the highest priority. The cleanest way to enforce this isolation is to resolve the tenant context as soon as a request hits the server.\n\nWe use a custom `TenantMiddleware` in NestJS to manage this context:\n1. **Context Resolution**: The middleware extracts the tenant subdomain from the request Host header or a custom `x-tenant-subdomain` header sent by the frontend.\n2. **Request Binding**: Once validated against the database, the tenant's ID is attached directly to the request object (`req['tenantId']`).\n3. **Automatic Scoping**: Query builders and repositories read the tenant ID from the request context, ensuring that every query is automatically scoped without manual boilerplate in service methods.\n4. **Support Impersonation**: Super-admins can bypass subdomain matching by passing an explicit `x-tenant-id` header (subject to admin validation).\n\nBy resolving this at the middleware boundary, our business logic remains simple, readable, and secure by default.\n\nCode reference: `backend/src/common/middleware/tenant.middleware.ts`\n\n#SoftwareEngineering #BackendDevelopment #SaaS"
+    ],
+    "learning": {
+      "concept": "Multi-tenant boundaries and authorization",
+      "official": "https://docs.nestjs.com/security/authorization",
+      "officialLabel": "NestJS authorization guide",
+      "youtube": "https://www.youtube.com/results?search_query=multi+tenant+authorization+architecture",
+      "youtubeLabel": "YouTube: multi-tenant authorization architecture",
+      "resourceKey": "multi-tenant",
+      "codeReference": "backend/src/common/middleware/tenant.middleware.ts",
+      "suggestedQuestion": "What is the main tradeoff in multi-tenant boundaries and authorization?"
+    },
+    "hashtags": [
+      "#SoftwareEngineering",
+      "#BackendDevelopment",
+      "#SaaS"
+    ]
   }
 ]

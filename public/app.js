@@ -8,7 +8,21 @@ async function loadPosts() {
   const data = await response.json()
   state.posts = data.posts
   state.bufferPlan = data.bufferPlan
+  
+  const params = new URLSearchParams(window.location.search)
+  const postId = params.get('post')
+  if (postId) {
+    state.selectedId = postId
+  }
+  
   render()
+  
+  if (postId) {
+    setTimeout(() => {
+      const el = document.querySelector(`.post-card.selected`)
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }, 200)
+  }
 }
 
 function filteredPosts() {
@@ -23,13 +37,14 @@ function filteredPosts() {
 
 function renderStats() {
   const approved = state.posts.filter((post) => post.status === 'Approved').length
+  const sent = state.posts.filter((post) => post.status === 'Sent').length
   const invalid = state.posts.filter((post) => !post.validation.valid).length
   $('#stats').innerHTML = [
     ['total', state.posts.length, 'publishing units'],
     ['approved', approved, 'approved for Buffer'],
+    ['sent', sent, 'sent to Buffer'],
     ['drafts', state.posts.filter((post) => post.status === 'Draft').length, 'awaiting review'],
-    ['invalid', invalid, 'need content fixes'],
-    ['capacity', state.bufferPlan ? `${state.bufferPlan.maxScheduledPostsPerChannel}/channel` : '—', 'Free plan queue limit']
+    ['invalid', invalid, 'need content fixes']
   ].map(([, value, label]) => `<div class="stat"><strong>${value}</strong><span>${label}</span></div>`).join('')
 }
 
@@ -118,6 +133,7 @@ function renderEditor() {
   const editor = $('#editor')
   if (!post) { editor.className = 'editor empty'; editor.textContent = 'Select a post to review.'; return }
   const validation = post.validation
+  const isSent = post.status === 'Sent'
   editor.className = 'editor'
   editor.innerHTML = `
     <div class="editor-top"><span class="badge">${post.platform} · Week ${post.week} · Day ${post.day}</span><span class="status ${post.status}">${post.status}</span></div>
@@ -131,7 +147,14 @@ function renderEditor() {
     <div id="mediaStatus" class="meta">${post.mediaPath ? `Uploaded: ${escapeHtml(post.mediaPath)}` : 'No image uploaded yet.'}</div>
     <div id="items">${post.items.map((item, index) => `<label>${post.format === 'thread' ? `Thread post ${index + 1}` : 'Post'}<textarea data-index="${index}">${escapeHtml(item)}</textarea></label>`).join('')}</div>
     <div class="validation ${validation.valid ? '' : 'invalid'}">${validation.valid ? 'Ready for review.' : 'Fix the highlighted platform rules before approving.'} Character counts: ${validation.counts.join(', ')} / limit ${validation.limit}${post.platform === 'X' ? ' · hashtags are not allowed' : ''}</div>
-    <div class="actions"><button class="approve" id="approve">Approve</button><button class="reject" id="reject">Reject</button><button class="secondary" id="unapprove">Move to Draft</button><button class="secondary" id="save">Save edits</button><button class="secondary" id="preview">Preview Buffer payload</button><button id="send">Send approved post</button></div>
+    <div class="actions">
+      <button class="approve" id="approve" ${isSent ? 'hidden' : ''}>Approve</button>
+      <button class="reject" id="reject" ${isSent ? 'hidden' : ''}>Reject</button>
+      <button class="secondary" id="unapprove">${isSent ? 'Reschedule (Move to Draft)' : 'Move to Draft'}</button>
+      <button class="secondary" id="save" ${isSent ? 'hidden' : ''}>Save edits</button>
+      <button class="secondary" id="preview">Preview Buffer payload</button>
+      <button id="send" ${isSent ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>${isSent ? 'Sent' : 'Send approved post'}</button>
+    </div>
     <pre class="preview" id="previewBox" hidden></pre>`
   $('#save').addEventListener('click', () => savePost(post, 'Draft'))
   $('#approve').addEventListener('click', () => savePost(post, 'Approved'))
