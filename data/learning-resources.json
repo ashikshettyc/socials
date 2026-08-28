@@ -1,0 +1,156 @@
+{
+  "multi-tenant": {
+    "concept": "Multi-tenant boundaries and authorization",
+    "official": "https://docs.nestjs.com/security/authorization",
+    "officialLabel": "NestJS authorization guide",
+    "youtube": "https://www.youtube.com/results?search_query=multi+tenant+authorization+architecture",
+    "youtubeLabel": "YouTube: multi-tenant authorization architecture"
+  },
+  "permissions": {
+    "concept": "Permissions, roles, and access control",
+    "official": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+    "officialLabel": "OWASP authorization cheat sheet",
+    "youtube": "https://www.youtube.com/results?search_query=RBAC+ABAC+authorization+explained",
+    "youtubeLabel": "YouTube: RBAC and ABAC explained"
+  },
+  "nestjs": {
+    "concept": "NestJS modules, guards, services, and validation",
+    "official": "https://docs.nestjs.com/",
+    "officialLabel": "NestJS documentation",
+    "youtube": "https://www.youtube.com/results?search_query=NestJS+official+tutorial",
+    "youtubeLabel": "YouTube: NestJS tutorials"
+  },
+  "authentication": {
+    "concept": "Authentication, sessions, JWT, and account security",
+    "official": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+    "officialLabel": "OWASP authentication cheat sheet",
+    "youtube": "https://www.youtube.com/results?search_query=JWT+authentication+sessions+explained",
+    "youtubeLabel": "YouTube: JWT and session authentication"
+  },
+  "transactions": {
+    "concept": "Database transactions and atomic workflows",
+    "official": "https://typeorm.io/transactions",
+    "officialLabel": "TypeORM transactions",
+    "youtube": "https://www.youtube.com/results?search_query=database+transactions+atomicity+explained",
+    "youtubeLabel": "YouTube: database transactions"
+  },
+  "state-machine": {
+    "concept": "State machines and workflow transitions",
+    "official": "https://xstate.js.org/docs/",
+    "officialLabel": "XState state machine docs",
+    "youtube": "https://www.youtube.com/results?search_query=state+machines+software+engineering",
+    "youtubeLabel": "YouTube: state machines in software"
+  },
+  "timers": {
+    "concept": "Timers, state, and reliable timed interfaces",
+    "official": "https://developer.mozilla.org/en-US/docs/Web/API/setInterval",
+    "officialLabel": "MDN setInterval reference",
+    "youtube": "https://www.youtube.com/results?search_query=JavaScript+timer+state+management",
+    "youtubeLabel": "YouTube: JavaScript timers and state"
+  },
+  "react-state": {
+    "concept": "React state, effects, and component design",
+    "official": "https://react.dev/learn/managing-state",
+    "officialLabel": "React state management guide",
+    "youtube": "https://www.youtube.com/results?search_query=React+state+management+official",
+    "youtubeLabel": "YouTube: React state management"
+  },
+  "typescript": {
+    "concept": "TypeScript types and domain modeling",
+    "official": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+    "officialLabel": "TypeScript handbook",
+    "youtube": "https://www.youtube.com/results?search_query=TypeScript+official+handbook+tutorial",
+    "youtubeLabel": "YouTube: TypeScript tutorials"
+  },
+  "exam-design": {
+    "concept": "Assessment design, question models, and exam UX",
+    "official": "https://developer.mozilla.org/en-US/docs/Learn/Forms",
+    "officialLabel": "MDN forms and user input",
+    "youtube": "https://www.youtube.com/results?search_query=online+assessment+platform+architecture",
+    "youtubeLabel": "YouTube: assessment platform architecture"
+  },
+  "browser-permissions": {
+    "concept": "Camera, microphone, fullscreen, and browser permissions",
+    "official": "https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia",
+    "officialLabel": "MDN getUserMedia",
+    "youtube": "https://www.youtube.com/results?search_query=browser+camera+microphone+permissions+JavaScript",
+    "youtubeLabel": "YouTube: browser media permissions"
+  },
+  "proctoring": {
+    "concept": "Browser-based monitoring and computer vision limits",
+    "official": "https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API",
+    "officialLabel": "MDN Media Capture and Streams",
+    "youtube": "https://www.youtube.com/results?search_query=browser+face+detection+TensorFlow.js",
+    "youtubeLabel": "YouTube: TensorFlow.js face detection"
+  },
+  "optimistic-ui": {
+    "concept": "Optimistic UI and server reconciliation",
+    "official": "https://tanstack.com/query/latest/docs/framework/react/guides/optimistic-updates",
+    "officialLabel": "TanStack optimistic updates",
+    "youtube": "https://www.youtube.com/results?search_query=optimistic+UI+server+reconciliation",
+    "youtubeLabel": "YouTube: optimistic UI"
+  },
+  "pagination": {
+    "concept": "Pagination, bounded queries, and scalable lists",
+    "official": "https://typeorm.io/select-query-builder",
+    "officialLabel": "TypeORM query builder",
+    "youtube": "https://www.youtube.com/results?search_query=database+pagination+offset+cursor",
+    "youtubeLabel": "YouTube: pagination strategies"
+  },
+  "n-plus-one": {
+    "concept": "N+1 queries and batched data loading",
+    "official": "https://typeorm.io/select-query-builder",
+    "officialLabel": "TypeORM query builder",
+    "youtube": "https://www.youtube.com/results?search_query=N%2B1+query+problem+explained",
+    "youtubeLabel": "YouTube: N+1 query problem"
+  },
+  "drag-drop": {
+    "concept": "Drag and drop interaction design",
+    "official": "https://docs.dndkit.com/",
+    "officialLabel": "dnd-kit documentation",
+    "youtube": "https://www.youtube.com/results?search_query=dnd-kit+React+tutorial",
+    "youtubeLabel": "YouTube: dnd-kit tutorials"
+  },
+  "caching": {
+    "concept": "Client caching, query keys, and invalidation",
+    "official": "https://tanstack.com/query/latest/docs/framework/react/guides/query-keys",
+    "officialLabel": "TanStack Query keys",
+    "youtube": "https://www.youtube.com/results?search_query=TanStack+Query+caching+invalidation",
+    "youtubeLabel": "YouTube: TanStack Query caching"
+  },
+  "audit": {
+    "concept": "Audit trails and operational history",
+    "official": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+    "officialLabel": "OWASP logging cheat sheet",
+    "youtube": "https://www.youtube.com/results?search_query=audit+trail+software+design",
+    "youtubeLabel": "YouTube: audit trail design"
+  },
+  "oauth": {
+    "concept": "OAuth, PKCE, token refresh, and revocation",
+    "official": "https://oauth.net/2/pkce/",
+    "officialLabel": "OAuth PKCE guide",
+    "youtube": "https://www.youtube.com/results?search_query=OAuth+2.0+PKCE+explained",
+    "youtubeLabel": "YouTube: OAuth and PKCE"
+  },
+  "api-design": {
+    "concept": "API boundaries, typed responses, and service design",
+    "official": "https://docs.nestjs.com/controllers",
+    "officialLabel": "NestJS controllers guide",
+    "youtube": "https://www.youtube.com/results?search_query=API+design+boundaries+backend+engineering",
+    "youtubeLabel": "YouTube: API design"
+  },
+  "security": {
+    "concept": "Secrets, local services, and secure integrations",
+    "official": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+    "officialLabel": "OWASP secrets management",
+    "youtube": "https://www.youtube.com/results?search_query=secrets+management+environment+variables+security",
+    "youtubeLabel": "YouTube: secrets management"
+  },
+  "quality": {
+    "concept": "Testing, linting, build checks, and feedback loops",
+    "official": "https://docs.nestjs.com/fundamentals/testing",
+    "officialLabel": "NestJS testing guide",
+    "youtube": "https://www.youtube.com/results?search_query=software+engineering+testing+feedback+loop",
+    "youtubeLabel": "YouTube: engineering testing practices"
+  }
+}

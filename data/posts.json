@@ -1,0 +1,51 @@
+[
+  {
+    "id": "x-001",
+    "platform": "X",
+    "week": 1,
+    "day": 1,
+    "format": "thread",
+    "status": "Draft",
+    "title": "Why multi-tenant apps need a tenant boundary",
+    "source": "backend/src/common/guards/permissions.guard.ts",
+    "items": [
+      "A multi-tenant app is not just one database with a tenant_id column. The real challenge is enforcing the boundary on every request.",
+      "In this project, tenant context is resolved before business logic runs. Regular users cannot switch tenants through a request header.",
+      "That check belongs near the request boundary, not scattered across controllers. Centralize the rule, then make services respect the same scope.",
+      "The lesson: tenant isolation is an invariant. Treat it like authentication, not as an optional filter added at the end."
+    ]
+  },
+  {
+    "id": "linkedin-001",
+    "platform": "LinkedIn",
+    "week": 1,
+    "day": 2,
+    "format": "post",
+    "status": "Draft",
+    "title": "The first useful lesson from building a modular operations platform",
+    "source": "NAVISHR-Dashboard/src/shared/layout/Sidebar.tsx",
+    "items": [
+      "One of the first lessons I learned while building a modular operations platform was that navigation is part of authorization.",
+      "A sidebar should not merely list every feature in the product. It should reflect the modules enabled for the organization and the permissions available to the current user.",
+      "That creates a better user experience, but the UI is only the visible layer. The backend still has to enforce the same rules. Hiding a menu item is not security.",
+      "The practical pattern is simple: use shared permission definitions, derive visibility from them, and enforce access again at the API boundary.",
+      "Good product architecture makes the allowed path obvious while making the forbidden path impossible."
+    ]
+  },
+  {
+    "id": "x-002",
+    "platform": "X",
+    "week": 1,
+    "day": 3,
+    "format": "thread",
+    "status": "Draft",
+    "title": "What a good exam player has to protect",
+    "source": "exam-player/src/features/student/exams/pages/StudentExamPlayerPage.tsx",
+    "items": [
+      "An online exam player is not just a form with a countdown. It has to protect the attempt, the answers, and the candidate experience at the same time.",
+      "The player handles registration validation, camera setup, fullscreen rules, answer syncing, timers, and final submission as one session.",
+      "Those concerns should still be separated internally. UI state controls the experience; the API remains the source of truth for the attempt.",
+      "The best exam UX feels calm to the candidate because the complex state transitions happen reliably in the background."
+    ]
+  }
+]

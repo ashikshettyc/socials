@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socials Review Desk</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">PRIVATE LOCAL WORKSPACE</p>
+          <h1>Socials Review Desk</h1>
+          <p class="subtitle">Review, refine, approve, and prepare daily posts before they reach Buffer.</p>
+        </div>
+          <div class="privacy">localhost only<br><span>Review first, then send approved posts</span></div>
+          <div class="buffer-connect"><button id="bufferCheck">Check Buffer connection</button><span id="bufferStatus">Not checked</span></div>
+      </header>
+
+      <section class="stats" id="stats"></section>
+
+      <section class="toolbar">
+        <label>Platform <select id="platformFilter"><option value="all">All platforms</option><option value="X">X</option><option value="LinkedIn">LinkedIn</option></select></label>
+        <label>Status <select id="statusFilter"><option value="all">All statuses</option><option value="Draft">Draft</option><option value="Approved">Approved</option><option value="Rejected">Rejected</option></select></label>
+        <label>Search <input id="searchFilter" placeholder="Search topics" /></label>
+        <button class="secondary" id="selectVisible">Select visible</button>
+        <button class="approve" id="approveSelected">Approve selected <span id="selectionCount">0</span></button>
+        <button class="secondary" id="draftSelected">Move selected to Draft</button>
+        <button id="sendSelected">Send approved selected</button>
+        <button class="secondary" id="clearSelection">Clear selection</button>
+      </section>
+      <section id="channelPanel" class="channel-panel" aria-live="polite">
+        <strong>Buffer channels</strong>
+        <span>Click “Check Buffer connection” to load active channels and their queue mode.</span>
+      </section>
+
+      <section class="layout">
+        <div id="postList" class="post-list"></div>
+        <aside id="editor" class="editor empty">Select a post to review.</aside>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

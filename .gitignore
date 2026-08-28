@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.local
+publishing-log.json
+buffer-config.json
+uploads/
