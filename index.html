@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=./public/resources.html" />
+    <title>Redirecting...</title>
+    <script>
+      // Automatically redirect to the resources page relative to the current site path
+      const currentPath = window.location.pathname;
+      const cleanPath = currentPath.endsWith('/') ? currentPath : currentPath + '/';
+      window.location.href = cleanPath + 'public/resources.html';
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="./public/resources.html">Learning Resources</a>...</p>
+  </body>
+</html>
