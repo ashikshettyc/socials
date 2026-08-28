@@ -5,7 +5,7 @@ const $ = (selector) => document.querySelector(selector);
 
 async function init() {
   try {
-    const resResponse = await fetch('/learning-resources.json');
+    const resResponse = await fetch('./learning-resources.json');
     resources = await resResponse.json();
     
     try {
