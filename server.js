@@ -91,28 +91,12 @@ async function readPosts() {
             : ['#SoftwareEngineering', '#BackendDevelopment', '#SaaS']
       next = { ...next, hashtags, items: next.items.map((text) => `${text}\n\n${hashtags.join(' ')}`) }
     }
-    const text = `${next.title} ${next.source}`.toLowerCase()
-    const resourceKey = text.includes('tenant') ? 'multi-tenant'
-      : text.includes('permission') || text.includes('authorization') ? 'permissions'
-        : text.includes('oauth') ? 'oauth'
-          : text.includes('auth') || text.includes('token') ? 'authentication'
-          : text.includes('transaction') ? 'transactions'
-            : text.includes('state machine') || text.includes('workflow') || text.includes('approval') ? 'state-machine'
-              : text.includes('timer') ? 'timers'
-                  : text.includes('camera') || text.includes('microphone') || text.includes('fullscreen') ? 'browser-permissions'
-                    : text.includes('exam') || text.includes('question') || text.includes('assessment') ? 'exam-design'
-                    : text.includes('proctor') || text.includes('face') ? 'proctoring'
-                      : text.includes('optimistic') || text.includes('drag') ? 'optimistic-ui'
-                        : text.includes('pagination') || text.includes('list') ? 'pagination'
-                          : text.includes('n+1') || text.includes('batched') ? 'n-plus-one'
-                            : text.includes('cache') || text.includes('query key') ? 'caching'
-                              : text.includes('audit') || text.includes('history') ? 'audit'
-                                : text.includes('oauth') ? 'oauth'
-                                  : text.includes('secret') || text.includes('security') ? 'security'
-                                    : text.includes('test') || text.includes('quality') ? 'quality'
-                                      : text.includes('type') || text.includes('typed') ? 'typescript'
-                                        : text.includes('nestjs') || text.includes('backend') ? 'nestjs'
-                                          : 'api-design'
+    // Each post is manually tagged with the concept it actually teaches (data/content-bank.json).
+    // Keyword-guessing from the title/source text used to live here and regularly mistagged posts
+    // (e.g. anything with "auth" in a file path landed on "authentication" even when the post was
+    // about transactions). Only fall back to a guess if a post is ever added without a curated key.
+    const curatedKey = next.learning?.resourceKey
+    const resourceKey = resources[curatedKey] ? curatedKey : 'quality'
     return {
       ...next,
       learning: {

@@ -1,177 +1,296 @@
 {
   "multi-tenant": {
     "concept": "Multi-tenant boundaries and authorization",
+    "learn": "Resolve tenant identity once, at the request boundary (middleware/guard) — never re-derive it inside business logic, and never trust a client-supplied tenant id without validating the caller's authority to use it.",
+    "why": "Cross-tenant data leaks are the single most damaging bug class in B2B SaaS — the kind that ends a customer relationship, not just a sprint.",
     "official": "https://docs.nestjs.com/security/authorization",
-    "officialLabel": "NestJS authorization guide",
-    "youtube": "https://www.youtube.com/results?search_query=multi+tenant+authorization+architecture",
-    "youtubeLabel": "YouTube: multi-tenant authorization architecture"
+    "officialLabel": "NestJS: Authorization",
+    "youtube": "https://www.youtube.com/watch?v=e8k6TynqGFs",
+    "youtubeLabel": "Multi-tenant Architecture for SaaS (CodeOpinion)",
+    "checklist": [
+      "Explain, from memory, where tenant context gets resolved in this codebase and why it happens before business logic",
+      "Name a concrete way a client could try to smuggle another tenant's id into a request, and how the guard stops it",
+      "Explain how impersonation can override tenant scoping safely without becoming a backdoor"
+    ]
   },
   "permissions": {
     "concept": "Permissions, roles, and access control",
+    "learn": "Design permissions as capabilities — resource, action, and scope — and treat roles as configurable bundles of them. Never branch business logic on a role name.",
+    "why": "Access-control design is one of the fastest tells of engineering seniority — juniors hardcode role checks, seniors design a vocabulary that survives the customer renaming their org chart.",
     "official": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
-    "officialLabel": "OWASP authorization cheat sheet",
-    "youtube": "https://www.youtube.com/results?search_query=RBAC+ABAC+authorization+explained",
-    "youtubeLabel": "YouTube: RBAC and ABAC explained"
-  },
-  "nestjs": {
-    "concept": "NestJS modules, guards, services, and validation",
-    "official": "https://docs.nestjs.com/",
-    "officialLabel": "NestJS documentation",
-    "youtube": "https://www.youtube.com/results?search_query=NestJS+official+tutorial",
-    "youtubeLabel": "YouTube: NestJS tutorials"
-  },
-  "authentication": {
-    "concept": "Authentication, sessions, JWT, and account security",
-    "official": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
-    "officialLabel": "OWASP authentication cheat sheet",
-    "youtube": "https://www.youtube.com/results?search_query=JWT+authentication+sessions+explained",
-    "youtubeLabel": "YouTube: JWT and session authentication"
-  },
-  "transactions": {
-    "concept": "Database transactions and atomic workflows",
-    "official": "https://typeorm.io/transactions",
-    "officialLabel": "TypeORM transactions",
-    "youtube": "https://www.youtube.com/results?search_query=database+transactions+atomicity+explained",
-    "youtubeLabel": "YouTube: database transactions"
+    "officialLabel": "OWASP: Authorization Cheat Sheet",
+    "youtube": "https://www.youtube.com/watch?v=ZMwK-w4pyGY",
+    "youtubeLabel": "RBAC vs. ABAC: Which Should You Use?",
+    "checklist": [
+      "Explain why `if (user.role === 'Manager')` in business logic is a code smell",
+      "Say when you'd reach for scope-based (ABAC) checks instead of plain role checks",
+      "Explain why hiding a UI element is not the same as enforcing access, and where real enforcement must live"
+    ]
   },
   "state-machine": {
     "concept": "State machines and workflow transitions",
+    "learn": "Before building a multi-step flow, write down the states and the allowed transitions between them explicitly — don't let the UI infer state from a pile of booleans.",
+    "why": "Most 'edge case' bugs in real products are just states nobody named. Naming them turns a bug hunt into a checklist.",
     "official": "https://xstate.js.org/docs/",
-    "officialLabel": "XState state machine docs",
-    "youtube": "https://www.youtube.com/results?search_query=state+machines+software+engineering",
-    "youtubeLabel": "YouTube: state machines in software"
+    "officialLabel": "XState: State Machines & Statecharts",
+    "youtube": "https://www.youtube.com/watch?v=iDZxjJYMOUQ",
+    "youtubeLabel": "XState - An Introduction: Finite State Machines in React",
+    "checklist": [
+      "List the states of one real flow in this codebase (exam attempt or approval) from memory",
+      "Explain why idempotent submission matters and how you'd guarantee it",
+      "Explain the difference between a status label and a state machine"
+    ]
+  },
+  "transactions": {
+    "concept": "Database transactions and atomic workflows",
+    "learn": "Draw the transaction boundary around the business action the user expects to be atomic (e.g. 'register' = credentials + profile + role), not around whichever repository calls happen to sit next to each other.",
+    "why": "Partial writes create the support tickets nobody can reproduce — 'my account is broken' three weeks later, with no idea why.",
+    "official": "https://typeorm.io/transactions",
+    "officialLabel": "TypeORM: Transactions",
+    "youtube": "https://www.youtube.com/watch?v=pomxJOFVcQs",
+    "youtubeLabel": "Relational Database ACID Transactions (Explained by Example)",
+    "checklist": [
+      "Name a workflow in this codebase that touches 2+ tables and say whether it's currently transactional",
+      "Explain what happens to already-issued side effects (emails, tokens) if a transaction rolls back midway",
+      "Explain the difference between a database transaction and a 'logical' multi-step workflow that can't be wrapped in one"
+    ]
   },
   "timers": {
     "concept": "Timers, state, and reliable timed interfaces",
-    "official": "https://developer.mozilla.org/en-US/docs/Web/API/setInterval",
-    "officialLabel": "MDN setInterval reference",
-    "youtube": "https://www.youtube.com/results?search_query=JavaScript+timer+state+management",
-    "youtubeLabel": "YouTube: JavaScript timers and state"
-  },
-  "react-state": {
-    "concept": "React state, effects, and component design",
-    "official": "https://react.dev/learn/managing-state",
-    "officialLabel": "React state management guide",
-    "youtube": "https://www.youtube.com/results?search_query=React+state+management+official",
-    "youtubeLabel": "YouTube: React state management"
-  },
-  "typescript": {
-    "concept": "TypeScript types and domain modeling",
-    "official": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
-    "officialLabel": "TypeScript handbook",
-    "youtube": "https://www.youtube.com/results?search_query=TypeScript+official+handbook+tutorial",
-    "youtubeLabel": "YouTube: TypeScript tutorials"
-  },
-  "exam-design": {
-    "concept": "Assessment design, question models, and exam UX",
-    "official": "https://developer.mozilla.org/en-US/docs/Learn/Forms",
-    "officialLabel": "MDN forms and user input",
-    "youtube": "https://www.youtube.com/results?search_query=online+assessment+platform+architecture",
-    "youtubeLabel": "YouTube: assessment platform architecture"
-  },
-  "browser-permissions": {
-    "concept": "Camera, microphone, fullscreen, and browser permissions",
-    "official": "https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia",
-    "officialLabel": "MDN getUserMedia",
-    "youtube": "https://www.youtube.com/results?search_query=browser+camera+microphone+permissions+JavaScript",
-    "youtubeLabel": "YouTube: browser media permissions"
-  },
-  "proctoring": {
-    "concept": "Browser-based monitoring and computer vision limits",
-    "official": "https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API",
-    "officialLabel": "MDN Media Capture and Streams",
-    "youtube": "https://www.youtube.com/results?search_query=browser+face+detection+TensorFlow.js",
-    "youtubeLabel": "YouTube: TensorFlow.js face detection"
+    "learn": "Treat countdown/expiry as domain state with a source of truth, not as a setInterval side-effect — define what happens on reload, on expiry, and on double-submit before writing the UI.",
+    "why": "A flaky timer is the fastest way to make users distrust a product that handles anything time-sensitive (exams, auctions, holds).",
+    "official": "https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval",
+    "officialLabel": "MDN: setInterval",
+    "youtube": "https://www.youtube.com/watch?v=x8PBWobv6NY",
+    "youtubeLabel": "How to Make an Accurate and Precise Timer in JavaScript",
+    "checklist": [
+      "Explain where the 'true' remaining time lives in this app: client clock, server timestamp, or both",
+      "Explain what happens if the tab is backgrounded or the page reloads mid-countdown",
+      "Explain how double-submission on expiry is prevented"
+    ]
   },
   "optimistic-ui": {
     "concept": "Optimistic UI and server reconciliation",
+    "learn": "Update the UI immediately for responsiveness, but keep local confidence and server confirmation as two distinct states — make a failed sync visible and recoverable instead of silently reverting.",
+    "why": "This is the difference between an app that feels fast and an app that lies to users about whether their data actually saved.",
     "official": "https://tanstack.com/query/latest/docs/framework/react/guides/optimistic-updates",
-    "officialLabel": "TanStack optimistic updates",
-    "youtube": "https://www.youtube.com/results?search_query=optimistic+UI+server+reconciliation",
-    "youtubeLabel": "YouTube: optimistic UI"
+    "officialLabel": "TanStack Query: Optimistic Updates",
+    "youtube": "https://www.youtube.com/watch?v=d18NPM5cnps",
+    "youtubeLabel": "Optimistic Updates — React/TanStack Query Series, Part 11",
+    "checklist": [
+      "Explain how this app distinguishes 'shown as saved' from 'confirmed saved'",
+      "Describe what the user sees when an optimistic update fails to persist",
+      "Explain why the server's state must remain the authority even when the UI moved first"
+    ]
+  },
+  "exam-design": {
+    "concept": "Hierarchical data, conditional validation, and UX state",
+    "learn": "When data is hierarchical (a passage with child questions) or conditional (a field that depends on another), centralize the traversal/validation rule in one place instead of letting every screen reinvent it.",
+    "why": "This generalizes past exams — any nested or conditional data model (menus, org charts, forms) breaks the same way if the recursive rule isn't written down once.",
+    "official": "https://developer.mozilla.org/en-US/docs/Learn/Forms",
+    "officialLabel": "MDN: Forms and User Input",
+    "youtube": "https://www.youtube.com/watch?v=wqzv-CzJy5k",
+    "youtubeLabel": "How to Handle Form Validation in React: Validate Inputs, Show Errors, Improve UX",
+    "checklist": [
+      "Explain how progress is counted for a question with children — roots only, or leaves?",
+      "Name one conditional field in this app and explain what clears it when its condition becomes false",
+      "Explain where 'small' UI state (like a review flag) should live so it survives navigation"
+    ]
+  },
+  "url-state": {
+    "concept": "URL and navigation state",
+    "learn": "Decide state placement by how long the user expects it to survive: ephemeral UI (a drawer) stays local; anything the user expects a refresh, back-button, or shared link to preserve belongs in the URL.",
+    "why": "Getting this wrong is invisible in a demo and infuriating in real use — the classic 'I refreshed and lost my filters' complaint.",
+    "official": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams",
+    "officialLabel": "MDN: URLSearchParams",
+    "youtube": "https://www.youtube.com/watch?v=ukpgxEemXsk",
+    "youtubeLabel": "STOP Using useState — Put State in the URL (React & Next.js)",
+    "checklist": [
+      "Name one piece of state in this app that lives in the URL and explain why it belongs there",
+      "Name one piece of state that stays local and explain why it shouldn't be in the URL",
+      "Explain what breaks if a shareable filter is kept only in React state"
+    ]
   },
   "pagination": {
     "concept": "Pagination, bounded queries, and scalable lists",
+    "learn": "Clamp page/limit at the API boundary so a client can never accidentally request an unbounded result set, and select only the fields a list view actually needs.",
+    "why": "This is the boring work that's invisible until the day a customer has 50,000 rows and your endpoint times out in front of them.",
     "official": "https://typeorm.io/select-query-builder",
-    "officialLabel": "TypeORM query builder",
-    "youtube": "https://www.youtube.com/results?search_query=database+pagination+offset+cursor",
-    "youtubeLabel": "YouTube: pagination strategies"
+    "officialLabel": "TypeORM: Select Query Builder",
+    "youtube": "https://www.youtube.com/watch?v=mvlzhBgGS4s",
+    "youtubeLabel": "API Pagination — Offset and Cursor Pagination Explained (Backend Engineering)",
+    "checklist": [
+      "Explain what stops a client from requesting an unbounded limit on a list endpoint",
+      "Explain why list endpoints should select fewer fields than detail endpoints",
+      "Name the tradeoff between offset pagination and cursor pagination"
+    ]
   },
   "n-plus-one": {
     "concept": "N+1 queries and batched data loading",
+    "learn": "Before writing a loop that fetches related data per row, ask what the whole response needs, collect the ids, fetch once, then map in memory.",
+    "why": "N+1 is the single most common reason a feature works fine in dev and falls over in production the moment real data volume shows up.",
     "official": "https://typeorm.io/select-query-builder",
-    "officialLabel": "TypeORM query builder",
-    "youtube": "https://www.youtube.com/results?search_query=N%2B1+query+problem+explained",
-    "youtubeLabel": "YouTube: N+1 query problem"
-  },
-  "drag-drop": {
-    "concept": "Drag and drop interaction design",
-    "official": "https://docs.dndkit.com/",
-    "officialLabel": "dnd-kit documentation",
-    "youtube": "https://www.youtube.com/results?search_query=dnd-kit+React+tutorial",
-    "youtubeLabel": "YouTube: dnd-kit tutorials"
-  },
-  "caching": {
-    "concept": "Client caching, query keys, and invalidation",
-    "official": "https://tanstack.com/query/latest/docs/framework/react/guides/query-keys",
-    "officialLabel": "TanStack Query keys",
-    "youtube": "https://www.youtube.com/results?search_query=TanStack+Query+caching+invalidation",
-    "youtubeLabel": "YouTube: TanStack Query caching"
+    "officialLabel": "TypeORM: Select Query Builder",
+    "youtube": "https://www.youtube.com/watch?v=Kx8-gSnNbnw",
+    "youtubeLabel": "The N+1 Query Problem — Fix This in Your Backend Project",
+    "checklist": [
+      "Spot an N+1 pattern by reading code, without running it",
+      "Explain the batched-lookup-map fix in your own words",
+      "Explain why this is a 'shape of the question' problem, not a syntax problem"
+    ]
   },
   "audit": {
     "concept": "Audit trails and operational history",
+    "learn": "For any workflow where 'who did what and why' matters, record actor, timestamp, action, and reason on every transition — not just the current status.",
+    "why": "A status field tells you where something is. An audit trail tells you how it got there — and that's what support, compliance, and your future self debugging at 2am actually need.",
     "official": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
-    "officialLabel": "OWASP logging cheat sheet",
-    "youtube": "https://www.youtube.com/results?search_query=audit+trail+software+design",
-    "youtubeLabel": "YouTube: audit trail design"
-  },
-  "oauth": {
-    "concept": "OAuth, PKCE, token refresh, and revocation",
-    "official": "https://oauth.net/2/pkce/",
-    "officialLabel": "OAuth PKCE guide",
-    "youtube": "https://www.youtube.com/results?search_query=OAuth+2.0+PKCE+explained",
-    "youtubeLabel": "YouTube: OAuth and PKCE"
-  },
-  "api-design": {
-    "concept": "API boundaries, typed responses, and service design",
-    "official": "https://docs.nestjs.com/controllers",
-    "officialLabel": "NestJS controllers guide",
-    "youtube": "https://www.youtube.com/results?search_query=API+design+boundaries+backend+engineering",
-    "youtubeLabel": "YouTube: API design"
+    "officialLabel": "OWASP: Logging Cheat Sheet",
+    "youtube": "https://www.youtube.com/watch?v=jvjhDBXSAZU",
+    "youtubeLabel": "The Best Way to Add Audit Tables to Your Database",
+    "checklist": [
+      "Name a workflow in this codebase where losing the 'why' behind a status change would hurt",
+      "List the four things a good audit record captures",
+      "Explain the difference between what a state machine enforces and what an audit trail explains"
+    ]
   },
   "security": {
     "concept": "Secrets, local services, and secure integrations",
+    "learn": "Never let a token or secret reach the browser — the client calls your backend, your backend holds the credential and calls the third party.",
+    "why": "If a secret can be read by the browser, it's public. This single boundary decision prevents an entire category of breach.",
     "official": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
-    "officialLabel": "OWASP secrets management",
-    "youtube": "https://www.youtube.com/results?search_query=secrets+management+environment+variables+security",
-    "youtubeLabel": "YouTube: secrets management"
+    "officialLabel": "OWASP: Secrets Management Cheat Sheet",
+    "youtube": "https://www.youtube.com/watch?v=vSEHQjCxSd8",
+    "youtubeLabel": "Environment Variables Explained: Secure Setup for Frontend & Backend",
+    "checklist": [
+      "Name one integration in this app and confirm its credential never touches the frontend",
+      "Explain why an .env file being gitignored isn't sufficient on its own",
+      "Explain where trust begins and ends for a third-party integration in this system"
+    ]
+  },
+  "oauth": {
+    "concept": "OAuth, PKCE, token refresh, and revocation",
+    "learn": "The first access token is the start of an integration's lifecycle, not the end — plan for callback/state validation, refresh-token rotation, revocation, and a clear disconnected state.",
+    "why": "Most OAuth bugs show up weeks later as silent failures (expired tokens nobody refreshed) rather than at integration time, which makes them expensive to trace.",
+    "official": "https://oauth.net/2/pkce/",
+    "officialLabel": "OAuth.net: PKCE",
+    "youtube": "https://www.youtube.com/watch?v=5FrA0UzV1Aw",
+    "youtubeLabel": "OAuth Is Broken Without This — Meet PKCE",
+    "checklist": [
+      "Explain what PKCE protects against and why it matters even for confidential clients",
+      "Explain what happens in this app when a refresh token rotates: is the old one discarded?",
+      "Describe what a 'disconnected' integration state looks like to the user"
+    ]
+  },
+  "typescript": {
+    "concept": "TypeScript types and domain modeling",
+    "learn": "Put the type-safety work at boundaries — unwrap transport envelopes (success/message/data) once in the API layer so feature code only ever sees the real domain type.",
+    "why": "Types are cheapest to get right at the edges of a system; retrofitting them after uncertainty has leaked into twenty components is expensive.",
+    "official": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+    "officialLabel": "TypeScript Handbook: Everyday Types",
+    "youtube": "https://www.youtube.com/watch?v=30LWjhZzg50",
+    "youtubeLabel": "Learn TypeScript — Full Tutorial",
+    "checklist": [
+      "Find one place in this app where an API envelope is unwrapped, and explain why it's not done in every component instead",
+      "Explain the difference between a type that describes wire data and a type that describes domain data",
+      "Give an example of a bug that a boundary type would have caught before runtime"
+    ]
+  },
+  "react-state": {
+    "concept": "React state, effects, and component design",
+    "learn": "Extract a shared component only when it protects a decision (how statuses are colored, how filters collapse) that people would otherwise reimplement inconsistently — not just to deduplicate markup.",
+    "why": "Premature abstraction is as expensive as duplication — it hides the decision behind an API that's harder to change than the copy-paste would have been.",
+    "official": "https://react.dev/learn/managing-state",
+    "officialLabel": "React: Managing State",
+    "youtube": "https://www.youtube.com/watch?v=-wZN7KCP-j4",
+    "youtubeLabel": "State in React — Thinking in React",
+    "checklist": [
+      "Name a shared component in this codebase and the decision it protects",
+      "Explain the difference between 'reused markup' and 'reused meaning'",
+      "Describe when you'd inline a component back out of a shared library"
+    ]
+  },
+  "browser-permissions": {
+    "concept": "Camera, microphone, and browser permission UX",
+    "learn": "Treat browser device APIs (camera, mic) as unreliable external services — design for denied, unsupported, interrupted, and revoked states, and always release the stream on cleanup.",
+    "why": "The permission grant is the easy 10% of the flow. The failure states are the feature, and they're the part users actually remember.",
+    "official": "https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia",
+    "officialLabel": "MDN: getUserMedia",
+    "youtube": "https://www.youtube.com/watch?v=aqa2Det4qv8",
+    "youtubeLabel": "Mastering getUserMedia in WebRTC — Avoiding Permission Pitfalls",
+    "checklist": [
+      "List the failure states this app's camera flow handles, from memory",
+      "Explain what happens to the camera stream when the modal closes",
+      "Explain why a permission prompt alone isn't 'done'"
+    ]
   },
   "quality": {
     "concept": "Testing, linting, build checks, and feedback loops",
+    "learn": "Run the cheapest test that could disprove your change immediately after making it — build, lint, and test the touched behavior in a tight loop, not as one giant pass at the end.",
+    "why": "Short feedback loops are what let you move fast without a growing pile of undiagnosed regressions — this is the actual mechanism behind 'senior engineers ship faster.'",
     "official": "https://docs.nestjs.com/fundamentals/testing",
-    "officialLabel": "NestJS testing guide",
-    "youtube": "https://www.youtube.com/results?search_query=software+engineering+testing+feedback+loop",
-    "youtubeLabel": "YouTube: engineering testing practices"
+    "officialLabel": "NestJS: Testing",
+    "youtube": "https://www.youtube.com/watch?v=ubgnSdOczXY",
+    "youtubeLabel": "Shorten the Feedback Loop — Developer Experience & System Design (PlatformCon 2023)",
+    "checklist": [
+      "Describe your own change -> build -> lint -> test loop in one sentence",
+      "Explain why testing at the end of a big refactor gives failures less diagnostic value",
+      "Name one part of a project's documented quality loop you don't currently follow"
+    ]
   },
   "s3-upload": {
     "concept": "Client-side image compression and uploads",
+    "learn": "Resize and compress images on the client with a canvas before upload — bound the dimensions and quality so a 10MB photo becomes tens of KB before it ever hits the network.",
+    "why": "This is a rare case where a small frontend change (not infra spend) fixes a cost problem, a latency problem, and a UX problem simultaneously.",
     "official": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob",
-    "officialLabel": "MDN Canvas toBlob documentation",
-    "youtube": "https://www.youtube.com/results?search_query=React+client+side+image+compression+canvas",
-    "youtubeLabel": "YouTube: client-side image compression in React"
+    "officialLabel": "MDN: Canvas toBlob",
+    "youtube": "https://www.youtube.com/watch?v=2okUvC2qBWk",
+    "youtubeLabel": "Resize & Compress Images in JavaScript (Client Side)",
+    "checklist": [
+      "Explain, from memory, the resize-then-toBlob pipeline this app uses before upload",
+      "Say what quality/dimension bounds this app targets and why those numbers",
+      "Explain why this is cheaper than a server-side or Lambda-based resizer"
+    ]
   },
   "pwa": {
     "concept": "Progressive Web Apps and install prompt handling",
+    "learn": "Don't assume `beforeinstallprompt` fires after your component mounts — cache it at the entry point and add delayed retry checks, because browsers fire it on different, unpredictable schedules.",
+    "why": "This is a great example of a bug that's invisible in your own browser and real for a meaningful slice of users — the kind that erodes trust in metrics if you don't know to look for it.",
     "official": "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable",
-    "officialLabel": "MDN Making PWAs installable",
-    "youtube": "https://www.youtube.com/results?search_query=PWA+beforeinstallprompt+React+tutorial",
-    "youtubeLabel": "YouTube: PWA install prompt in React"
+    "officialLabel": "MDN: Making PWAs Installable",
+    "youtube": "https://www.youtube.com/watch?v=kzJfiKQyD24",
+    "youtubeLabel": "Deep Dive into the PWA Install Flow",
+    "checklist": [
+      "Explain why caching the prompt event at the app entry point matters",
+      "Name the browsers this app's install hook has to reconcile and how their timing differs",
+      "Explain what 'bulletproof' means here — worst case, not happy path"
+    ]
   },
   "impersonation": {
-    "concept": "Admin impersonation and secure B2B tenant switching",
+    "concept": "Admin impersonation and secure tenant switching",
+    "learn": "Pair a strict backend session/header check with an unmissable visual boundary (a persistent banner) so impersonation is both technically scoped and impossible to forget you're in.",
+    "why": "Impersonation is a feature where the backend being correct isn't enough — the human forgetting they're impersonating is the actual risk, and only UX design fixes that.",
     "official": "https://cheatsheetseries.owasp.org/cheatsheets/Access_Control_Cheat_Sheet.html",
-    "officialLabel": "OWASP Access Control cheat sheet",
-    "youtube": "https://www.youtube.com/results?search_query=SaaS+user+impersonation+security+architecture",
-    "youtubeLabel": "YouTube: secure impersonation in SaaS"
+    "officialLabel": "OWASP: Access Control Cheat Sheet",
+    "youtube": "https://www.youtube.com/watch?v=FFss7KAZ7xE",
+    "youtubeLabel": "Laravel SaaS Components #6 — Impersonation",
+    "checklist": [
+      "Explain how this app's backend scopes an impersonated session separately from a normal one",
+      "Describe the visual cue that makes impersonation impossible to forget",
+      "Explain what the 'exit impersonation' path guarantees"
+    ]
+  },
+  "nestjs": {
+    "concept": "NestJS services, guards, and centralized business rules",
+    "learn": "When the same rule (e.g. 'is this record frozen') would otherwise be checked in every controller, centralize it in one injectable service and make every write path pass through it.",
+    "why": "Scattered checks are the #1 way a rule silently stops being enforced somewhere — someone adds a new endpoint and nobody tells them the check existed.",
+    "official": "https://docs.nestjs.com/guards",
+    "officialLabel": "NestJS: Guards",
+    "youtube": "https://www.youtube.com/watch?v=wdsp7BNmJRc",
+    "youtubeLabel": "NestJS Authorization: RBAC, ABAC, Claims-Based, and More",
+    "checklist": [
+      "Name a centralized rule in this backend (e.g. FreezeService) and the write paths it protects",
+      "Explain what happens if a new controller forgets to call it",
+      "Explain the difference between a guard and a service-level check, and when you'd use each"
+    ]
   }
 }

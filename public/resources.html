@@ -40,6 +40,48 @@
         color: var(--muted);
         line-height: 1.5;
       }
+      .resource-card .resource-field {
+        margin-top: 8px;
+      }
+      .resource-card .resource-field b {
+        color: var(--ink);
+      }
+      .resource-card .resource-field.why {
+        color: var(--muted);
+        font-style: italic;
+      }
+      .resource-card.mastered {
+        border-color: var(--green, #2f9e5f);
+        box-shadow: 0 0 0 1px var(--green, #2f9e5f) inset;
+      }
+      .section-label {
+        color: var(--ink);
+        display: block;
+        margin-bottom: 6px;
+        font-family: 'Space Grotesk', sans-serif;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 0.05em;
+      }
+      .mastery-checklist {
+        margin: 0;
+        padding-left: 18px;
+        font-size: 12px;
+        color: var(--muted);
+        display: grid;
+        gap: 4px;
+      }
+      .mastered-toggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--ink);
+        border-top: 1px solid var(--line);
+        padding-top: 12px;
+        cursor: pointer;
+      }
       .resource-card .links {
         display: flex;
         flex-direction: column;
@@ -115,7 +157,7 @@
         <div>
           <p class="eyebrow">PRIVATE LOCAL WORKSPACE</p>
           <h1>Learning Resources</h1>
-          <p class="subtitle">Reference syllabus for B2B SaaS architecture, Frontend Performance, and Web Security.</p>
+          <p class="subtitle">21 concepts pulled from this codebase — what to actually learn from each, and why it's worth learning.</p>
           <nav class="nav-tabs">
             <a href="/" class="nav-link">Review Desk</a>
             <a href="/resources.html" class="nav-link active">Learning Resources</a>
@@ -125,9 +167,7 @@
       </header>
 
       <section class="stats" id="stats">
-        <div class="stat"><strong>25</strong><span>Total Concepts</span></div>
-        <div class="stat"><strong>60</strong><span>Content Bank Posts</span></div>
-        <div class="stat"><strong>100%</strong><span>Practical Code Links</span></div>
+        <div class="stat"><strong>0</strong><span>Loading…</span></div>
       </section>
 
       <section class="toolbar">

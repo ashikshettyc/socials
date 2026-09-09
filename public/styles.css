@@ -56,6 +56,7 @@ select, input, textarea { border: 1px solid var(--line); border-radius: 8px; bac
 .learning-links { display: grid; gap: 5px; margin-top: 5px; }
 .learning-links a { color: #0a66c2; font-weight: 700; text-decoration: none; }
 .learning-links a:hover { text-decoration: underline; }
+.learning-checklist { margin: 4px 0 0; padding-left: 18px; display: grid; gap: 3px; }
 .select-label { display: flex; align-items: center; gap: 5px; color: var(--muted); font-size: 10px; font-weight: 700; }
 .select-label input { accent-color: var(--accent); padding: 0; }
 .editor { min-height: 520px; padding: 24px; position: sticky; top: 18px; max-height: calc(100vh - 36px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(23, 35, 29, 0.15) transparent; }

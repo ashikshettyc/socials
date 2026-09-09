@@ -139,7 +139,13 @@ function renderEditor() {
     <div class="editor-top"><span class="badge">${post.platform} · Week ${post.week} · Day ${post.day}</span><span class="status ${post.status}">${post.status}</span></div>
     <h2>${escapeHtml(post.title)}</h2>
     <p class="meta">Source: ${escapeHtml(post.source)}</p>
-    ${post.learning ? `<div class="learning-box"><strong>Learn this concept</strong><p>${escapeHtml(post.learning.concept)}</p><span>${escapeHtml(post.learning.suggestedQuestion)}</span><div class="learning-links"><a href="${escapeHtml(post.learning.official)}" target="_blank" rel="noreferrer">Official docs · ${escapeHtml(post.learning.officialLabel)}</a><a href="${escapeHtml(post.learning.youtube)}" target="_blank" rel="noreferrer">${escapeHtml(post.learning.youtubeLabel)}</a><span>Code reference: ${escapeHtml(post.learning.codeReference)}</span></div></div>` : ''}
+    ${post.learning ? `<div class="learning-box">
+      <strong>${escapeHtml(post.learning.concept)}</strong>
+      <p><b>Learn:</b> ${escapeHtml(post.learning.learn)}</p>
+      <p><b>Why it matters:</b> ${escapeHtml(post.learning.why)}</p>
+      ${post.learning.checklist ? `<ul class="learning-checklist">${post.learning.checklist.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : ''}
+      <div class="learning-links"><a href="${escapeHtml(post.learning.official)}" target="_blank" rel="noreferrer">Reference · ${escapeHtml(post.learning.officialLabel)}</a>${post.learning.youtube ? `<a href="${escapeHtml(post.learning.youtube)}" target="_blank" rel="noreferrer">📺 ${escapeHtml(post.learning.youtubeLabel)}</a>` : ''}<span>Code reference: ${escapeHtml(post.learning.codeReference)}</span></div>
+    </div>` : ''}
     ${post.platform === 'LinkedIn' && post.hashtags ? `<div class="validation">Suggested LinkedIn hashtags: ${post.hashtags.join(' ')}</div>` : ''}
     ${post.platform === 'X' ? '<div class="validation">X rule: no hashtags. Add a verified mention only when the post directly discusses that account or project.</div>' : ''}
     ${post.mediaHint ? `<div class="validation">Image suggestion: ${escapeHtml(post.mediaHint)}${post.mediaRequired ? ' (recommended)' : ' (optional)'}</div>` : ''}
